@@ -173,7 +173,7 @@ export function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.08 }}
                   whileHover={{ scale: 1.03, y: -2 }}
-                  className="inline-flex items-center gap-2.5 px-6 py-3 md:px-8 md:py-4 bg-white/[0.05] border border-white/10 rounded-full text-white text-base md:text-lg font-medium hover:border-sunset/30 hover:bg-sunset/5 transition-all duration-300 cursor-default"
+                  className="inline-flex items-center gap-2.5 px-2 py-2 text-white text-base md:text-lg font-medium transition-all duration-300 cursor-default"
                 >
                   <Target className="w-4 h-4 text-sunset" />
                   {value}

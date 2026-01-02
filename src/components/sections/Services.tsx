@@ -10,14 +10,6 @@ const services = [
     title: "Branding",
     description:
       "We craft complete brand identities that resonate with your audience. From naming to visual systems, we build brands that feel authentic and command attention.",
-    features: [
-      "Brand Naming",
-      "Logo Design",
-      "Visual Identity",
-      "Color Palette",
-      "Stationery Design",
-      "Brand Guidelines",
-    ],
     accentColor: "sunset",
   },
   {
@@ -25,12 +17,6 @@ const services = [
     title: "Website Development",
     description:
       "Fast, beautiful, conversion-focused websites built with modern technology. From domain setup to SEO optimization, we handle everything.",
-    features: [
-      "Domain & Hosting",
-      "Website UI Design",
-      "Website Development",
-      "SEO Optimization",
-    ],
     accentColor: "sea-green",
   },
   {
@@ -38,13 +24,6 @@ const services = [
     title: "Digital Marketing",
     description:
       "Strategic marketing campaigns that put your brand in front of the right people. We create, manage, and optimize for measurable results.",
-    features: [
-      "Marketing Strategy",
-      "Content Calendar",
-      "Social Media Creatives",
-      "Performance Marketing",
-      "Analytics & Reporting",
-    ],
     accentColor: "kraft",
   },
   {
@@ -52,13 +31,6 @@ const services = [
     title: "Business Scaling",
     description:
       "Ready to grow? We build systems and strategies that scale with you. From CRM setup to process optimization, we set you up for sustainable success.",
-    features: [
-      "Sales Funnel Optimization",
-      "CRM Setup & Management",
-      "Process Design",
-      "Tech Adoption",
-      "Data Analytics",
-    ],
     accentColor: "sunset",
   },
 ];
@@ -68,19 +40,16 @@ const accentStyles = {
     label: "text-sunset/80",
     border: "hover:border-sunset/30",
     iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-sunset",
-    tag: "bg-sunset/10 text-sunset/80",
   },
   "sea-green": {
     label: "text-sea-green/80",
     border: "hover:border-sea-green/30",
     iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-sea-green",
-    tag: "bg-sea-green/10 text-sea-green/80",
   },
   kraft: {
     label: "text-kraft/80",
     border: "hover:border-kraft/30",
     iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-kraft",
-    tag: "bg-kraft/10 text-kraft/80",
   },
 };
 
@@ -145,21 +114,9 @@ export function Services() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-white/60 mb-8 leading-relaxed">
+                    <p className="text-white/70 text-base md:text-lg lg:text-xl leading-relaxed md:leading-relaxed lg:leading-relaxed">
                       {service.description}
                     </p>
-
-                    {/* Features */}
-                    <div className="flex flex-wrap gap-2">
-                      {service.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className={`text-xs font-medium px-3 py-1.5 rounded-full ${styles.tag}`}
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </motion.div>
               </FadeInView>

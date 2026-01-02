@@ -8,6 +8,12 @@ import { ArrowRight, Mail, Phone } from "lucide-react";
 export function CTA() {
   return (
     <section id="contact" className="relative bg-kraft py-24 md:py-32 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/herobg1.png')" }}
+      />
+
       {/* Animated Background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating gradient orbs */}
@@ -78,7 +84,7 @@ export function CTA() {
 
           <FadeInView delay={0.1}>
             <h2 className="text-nile-blue text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-6">
-              Let&apos;s Build Your <span className="text-sunset">Legacy</span>,
+              Let&apos;s Build Your <span style={{ color: '#C85A32' }}>Legacy</span>,
               <br />
               Together
             </h2>

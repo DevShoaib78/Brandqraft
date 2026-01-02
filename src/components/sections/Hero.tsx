@@ -45,7 +45,7 @@ export function Hero() {
             <br />
             into thriving
             <br />
-            <span className="text-sunset">BRANDS</span>
+            <span style={{ color: '#C85A32' }}>BRANDS</span>
           </motion.h1>
 
           <motion.p
