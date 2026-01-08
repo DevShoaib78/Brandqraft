@@ -4,75 +4,29 @@ import { motion } from "framer-motion";
 import { FadeInView } from "../ui/FadeInView";
 import { Button } from "../ui/Button";
 import { ArrowRight, Mail, Phone } from "lucide-react";
+import { OrigamiDecorationGroup } from "../ui/OrigamiDecoration";
+
+const ctaDecorations = [
+  // Left side - 2 icons (mobile-first positioning)
+  { icon: "046-origami" as const, size: "sm" as const, position: { top: "15%", left: "2%" }, opacity: 1.0, rotate: -12, colorFilter: "black" as const },
+  { icon: "047-origami" as const, size: "xs" as const, position: { bottom: "20%", left: "3%" }, opacity: 1.0, rotate: 15, colorFilter: "black" as const },
+
+  // Right side - 2 icons (mobile-first positioning)
+  { icon: "022-origami" as const, size: "xs" as const, position: { top: "12%", right: "2%" }, opacity: 1.0, rotate: 10, colorFilter: "black" as const },
+  { icon: "033-origami" as const, size: "sm" as const, position: { bottom: "18%", right: "2%" }, opacity: 1.0, rotate: -8, colorFilter: "black" as const },
+];
 
 export function CTA() {
   return (
-    <section id="contact" className="relative bg-kraft py-24 md:py-32 overflow-hidden">
-      {/* Background Image */}
+    <section id="contact" className="relative py-16 md:py-20 overflow-hidden">
+      {/* Background Image - Pure, no overlays */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/herobg1.png')" }}
+        style={{ backgroundImage: "url('/endbg.png')" }}
       />
 
-      {/* Animated Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Floating gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 -left-20 w-80 h-80 bg-sunset/20 rounded-full blur-[100px]"
-          animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 -right-20 w-96 h-96 bg-nile-blue/15 rounded-full blur-[120px]"
-          animate={{
-            x: [0, -25, 0],
-            y: [0, 25, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sea-green/10 rounded-full blur-[150px]"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* Subtle texture overlay */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.06]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <filter id="ctaNoise">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.6"
-              numOctaves="3"
-              stitchTiles="stitch"
-            />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#ctaNoise)" />
-        </svg>
-      </div>
+      {/* Origami Decorations */}
+      <OrigamiDecorationGroup decorations={ctaDecorations} />
 
       <div className="container relative mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
@@ -83,7 +37,7 @@ export function CTA() {
           </FadeInView>
 
           <FadeInView delay={0.1}>
-            <h2 className="text-nile-blue text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-6">
+            <h2 className="text-nile-blue text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
               Let&apos;s Build Your <span style={{ color: '#C85A32' }}>Legacy</span>,
               <br />
               Together
@@ -91,7 +45,7 @@ export function CTA() {
           </FadeInView>
 
           <FadeInView delay={0.2}>
-            <p className="text-nile-blue/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-nile-blue/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-semibold">
               Whether you&apos;re launching a new venture or scaling an existing
               business, we&apos;re here to transform your innovative ideas into
               thriving brands.
@@ -100,16 +54,16 @@ export function CTA() {
 
           <FadeInView delay={0.3}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <Button variant="primary" size="lg" href="mailto:info@brandqraft.co">
+              <Button variant="primary" size="lg" href="mailto:info@brandqraft.co" paperCut>
                 Start a Conversation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
 
               <Button
-                variant="outline"
+                variant="outline-dark"
                 size="lg"
                 href="tel:+919536084444"
-                className="border-nile-blue text-nile-blue hover:bg-nile-blue/10"
+                paperCut
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Call Us
@@ -120,11 +74,11 @@ export function CTA() {
           <FadeInView delay={0.4}>
             <motion.a
               href="mailto:info@brandqraft.co"
-              className="inline-flex items-center gap-2 text-nile-blue/70 hover:text-nile-blue transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-nile-blue hover:text-sunset transition-colors duration-300"
               whileHover={{ x: 3 }}
             >
               <Mail className="w-5 h-5" />
-              <span className="text-base">info@brandqraft.co</span>
+              <span className="text-lg md:text-xl font-bold">info@brandqraft.co</span>
             </motion.a>
           </FadeInView>
 

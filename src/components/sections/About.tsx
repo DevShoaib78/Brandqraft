@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Rocket, Eye, Target } from "lucide-react";
 import { FadeInView } from "../ui/FadeInView";
 import { CounterStat } from "../ui/CounterStat";
+import { OrigamiDecorationGroup } from "../ui/OrigamiDecoration";
 
 const stats = [
   { end: 50, suffix: "+", label: "Projects Delivered" },
@@ -19,9 +20,19 @@ const values = [
   "Trust",
 ];
 
+const aboutDecorations = [
+  // Around the title (mobile-first positioning)
+  { icon: "022-origami" as const, size: "sm" as const, position: { top: "3%", left: "2%" }, opacity: 1.0, rotate: -15, colorFilter: "light" as const },
+  { icon: "033-origami" as const, size: "xs" as const, position: { top: "8%", right: "2%" }, opacity: 1.0, rotate: 10, colorFilter: "light" as const },
+
+  // Around the quote at the bottom (mobile-first positioning)
+  { icon: "040-origami" as const, size: "xs" as const, position: { bottom: "15%", left: "2%" }, opacity: 1.0, rotate: 12, colorFilter: "light" as const },
+  { icon: "041-origami" as const, size: "sm" as const, position: { bottom: "10%", right: "2%" }, opacity: 1.0, rotate: -8, colorFilter: "light" as const },
+];
+
 export function About() {
   return (
-    <section id="about" className="relative bg-nile-blue py-24 md:py-32 overflow-hidden">
+    <section id="about" className="relative bg-nile-blue py-16 md:py-20 overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -37,17 +48,20 @@ export function About() {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sea-green/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sunset/10 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3" />
 
+      {/* Origami Decorations */}
+      <OrigamiDecorationGroup decorations={aboutDecorations} />
+
       <div className="container relative mx-auto px-6 lg:px-12">
         {/* Section Header - Centered */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <FadeInView>
-            <span className="inline-block text-sea-green text-sm font-semibold tracking-widest uppercase mb-4">
-              About Us
+            <span className="inline-block text-sea-green text-sm font-semibold tracking-widest mb-4">
+              About us
             </span>
           </FadeInView>
 
           <FadeInView delay={0.1}>
-            <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+            <h2 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
               Transforming ideas into{" "}
               <span className="text-sunset">Thriving Brands</span>
             </h2>
@@ -72,16 +86,32 @@ export function About() {
               className="group relative h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-sunset/20 to-sunset/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-10 lg:p-12 hover:border-sunset/30 transition-colors duration-300 overflow-hidden">
+              <div
+                className="relative h-full bg-white/[0.03] backdrop-blur-sm border-2 border-white/20 p-8 md:p-10 lg:p-12 hover:border-sunset/40 transition-colors duration-300 overflow-visible"
+                style={{
+                  borderRadius: "0px",
+                  clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
+                }}
+              >
+                {/* Paper-fold effect for top-right corner */}
+                <div
+                  className="absolute top-0 right-0 w-8 h-8 opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%)",
+                    borderLeft: "1px solid rgba(255,255,255,0.15)",
+                    borderBottom: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                />
                 {/* Large Background Icon */}
-                <div className="absolute -right-6 top-4 opacity-[0.12] group-hover:opacity-[0.18] transition-opacity duration-500">
+                <div className="absolute -right-6 top-4 opacity-[0.18] group-hover:opacity-[0.25] transition-opacity duration-500">
                   <Eye className="w-48 h-48 md:w-56 md:h-56 text-sunset" strokeWidth={1} />
                 </div>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <span className="inline-block text-sunset/80 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                    Our Vision
+                  <span className="inline-block text-sunset/80 text-xs font-semibold tracking-[0.2em] mb-4">
+                    Our vision
                   </span>
                   <h3 className="text-white text-2xl md:text-3xl font-semibold mb-5 leading-tight">
                     Empowering Ambitious{" "}
@@ -105,16 +135,32 @@ export function About() {
               className="group relative h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-sea-green/20 to-sea-green/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-10 lg:p-12 hover:border-sea-green/30 transition-colors duration-300 overflow-hidden">
+              <div
+                className="relative h-full bg-white/[0.03] backdrop-blur-sm border-2 border-white/20 p-8 md:p-10 lg:p-12 hover:border-sea-green/40 transition-colors duration-300 overflow-visible"
+                style={{
+                  borderRadius: "0px",
+                  clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
+                }}
+              >
+                {/* Paper-fold effect for top-right corner */}
+                <div
+                  className="absolute top-0 right-0 w-8 h-8 opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%)",
+                    borderLeft: "1px solid rgba(255,255,255,0.15)",
+                    borderBottom: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                />
                 {/* Large Background Icon */}
-                <div className="absolute -right-4 top-4 opacity-[0.12] group-hover:opacity-[0.18] transition-opacity duration-500">
+                <div className="absolute -right-4 top-4 opacity-[0.18] group-hover:opacity-[0.25] transition-opacity duration-500">
                   <Rocket className="w-48 h-48 md:w-56 md:h-56 text-sea-green" strokeWidth={1} />
                 </div>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <span className="inline-block text-sea-green/80 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-                    Our Mission
+                  <span className="inline-block text-sea-green/80 text-xs font-semibold tracking-[0.2em] mb-4">
+                    Our mission
                   </span>
                   <h3 className="text-white text-2xl md:text-3xl font-semibold mb-5 leading-tight">
                     End-to-End{" "}
@@ -134,12 +180,12 @@ export function About() {
         <FadeInView delay={0.3}>
           <div className="relative mb-20">
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-3xl" />
-            <div className="absolute inset-0 border border-white/[0.05] rounded-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent rounded-3xl" />
+            <div className="absolute inset-0 border-2 border-white/[0.15] rounded-3xl" />
 
             {/* Decorative corner accents */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-sunset/30 rounded-tl-3xl" />
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-sea-green/30 rounded-br-3xl" />
+            <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-sunset/50 rounded-tl-3xl" />
+            <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-sea-green/50 rounded-br-3xl" />
 
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 py-16 md:py-20 px-8 md:px-12">
               {stats.map((stat, i) => (

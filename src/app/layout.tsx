@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
   description:
     "BrandQraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
+  alternates: {
+    canonical: "https://brandqraft.co",
+  },
   keywords: [
     "branding agency",
     "digital marketing",
@@ -50,9 +53,9 @@ export const metadata: Metadata = {
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
         alt: "BrandQraft - Your Strategic Growth Partner",
       },
     ],
@@ -62,7 +65,8 @@ export const metadata: Metadata = {
     title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
+    creator: "@brandqraft",
   },
   icons: {
     icon: "/favicon.png",

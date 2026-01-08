@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FadeInView } from "../ui/FadeInView";
+import { OrigamiDecorationGroup } from "../ui/OrigamiDecoration";
 
 const steps = [
   {
@@ -30,20 +31,28 @@ const steps = [
   },
 ];
 
+const approachDecorations = [
+  // One big icon on the right side of the heading (mobile-first positioning)
+  { icon: "045-origami" as const, size: "md" as const, position: { top: "6%", right: "2%" }, opacity: 1.0, rotate: 10, colorFilter: "light" as const },
+];
+
 export function Approach() {
   return (
-    <section id="approach" className="bg-nile-blue py-24 md:py-32 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="approach" className="relative bg-nile-blue py-16 md:py-20 overflow-hidden">
+      {/* Origami Decorations */}
+      <OrigamiDecorationGroup decorations={approachDecorations} />
+
+      <div className="container relative mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 md:mb-20">
           <FadeInView>
-            <span className="inline-block text-sea-green text-sm font-medium tracking-widest uppercase mb-4">
-              Our Approach
+            <span className="inline-block text-sea-green text-sm font-medium tracking-widest mb-4">
+              Our approach
             </span>
           </FadeInView>
 
           <FadeInView delay={0.1}>
-            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+            <h2 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
               A process built for
               <br />
               <span className="text-sunset">Pixel Perfection</span>

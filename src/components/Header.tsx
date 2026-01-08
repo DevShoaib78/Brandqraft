@@ -41,18 +41,31 @@ export function Header() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8"
       >
-        {/* Floating Navbar Container */}
+        {/* Floating Navbar Container with paper-fold corner */}
         <div
-          className={`mx-auto mt-4 max-w-6xl transition-all duration-500 ease-out ${
+          className={`relative mx-auto mt-4 max-w-6xl transition-all duration-500 ease-out ${
             isScrolled
               ? "bg-nile-blue/95 backdrop-blur-xl shadow-2xl shadow-nile-blue/20"
               : "bg-transparent"
           }`}
           style={{
-            borderRadius: isScrolled ? "9999px" : "9999px",
+            borderRadius: "0px",
             padding: isScrolled ? "0.625rem 1rem" : "0.75rem 1rem",
+            clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%)",
           }}
         >
+          {/* Paper-fold effect for top-right corner */}
+          <div
+            className={`absolute top-0 right-0 w-6 h-6 transition-all duration-500 ${
+              isScrolled ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+              clipPath: "polygon(0 0, 100% 0, 100% 100%)",
+              borderLeft: "1px solid rgba(255,255,255,0.1)",
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
+            }}
+          />
           <nav className="flex items-center justify-between px-2 sm:px-4">
             {/* Logo with smooth transition */}
             <a href="#" className="relative flex items-center">
@@ -86,7 +99,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`text-base font-medium tracking-wide transition-colors duration-300 ${
+                  className={`text-base font-semibold tracking-wide transition-colors duration-300 ${
                     isScrolled
                       ? "text-white/80 hover:text-white"
                       : "text-nile-blue/70 hover:text-nile-blue"
@@ -101,7 +114,7 @@ export function Header() {
                 href="#contact"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className={`relative overflow-hidden rounded-full px-6 py-2.5 text-base font-semibold transition-all duration-300 ${
+                className={`relative overflow-hidden px-6 py-2.5 text-base font-semibold transition-all duration-300 ${
                   isScrolled
                     ? "bg-sunset text-white hover:bg-[#c85a32]"
                     : "bg-nile-blue text-white hover:bg-nile-blue/90"
@@ -183,7 +196,7 @@ export function Header() {
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
                     whileTap={{ scale: 0.98 }}
-                    className="block w-full rounded-full bg-sunset px-8 py-4 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32]"
+                    className="block w-full bg-sunset px-8 py-4 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32]"
                   >
                     Craft a Project
                   </motion.a>

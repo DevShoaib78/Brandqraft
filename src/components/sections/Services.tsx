@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeInView } from "../ui/FadeInView";
 import { Palette, Globe, TrendingUp, Layers } from "lucide-react";
+import { OrigamiDecorationGroup } from "../ui/OrigamiDecoration";
 
 const services = [
   {
@@ -37,44 +38,65 @@ const services = [
 
 const accentStyles = {
   sunset: {
-    label: "text-sunset/80",
-    border: "hover:border-sunset/30",
-    iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-sunset",
+    label: "text-sunset/90",
+    border: "hover:border-sunset/50",
+    iconBg: "opacity-[0.25] group-hover:opacity-[0.35] text-sunset",
+    cardBg: "bg-nile-blue/90",
   },
   "sea-green": {
-    label: "text-sea-green/80",
-    border: "hover:border-sea-green/30",
-    iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-sea-green",
+    label: "text-sea-green/90",
+    border: "hover:border-sea-green/50",
+    iconBg: "opacity-[0.25] group-hover:opacity-[0.35] text-sea-green",
+    cardBg: "bg-nile-blue/88",
   },
   kraft: {
-    label: "text-kraft/80",
-    border: "hover:border-kraft/30",
-    iconBg: "opacity-[0.12] group-hover:opacity-[0.18] text-kraft",
+    label: "text-kraft/90",
+    border: "hover:border-kraft/50",
+    iconBg: "opacity-[0.25] group-hover:opacity-[0.35] text-kraft",
+    cardBg: "bg-nile-blue/92",
   },
 };
 
+const servicesDecorations = [
+  // Left side of the title (mobile-first positioning)
+  { icon: "043-origami" as const, size: "sm" as const, position: { top: "5%", left: "2%" }, opacity: 1.0, rotate: -12, colorFilter: "black" as const },
+  // Right side of the title (mobile-first positioning)
+  { icon: "044-origami" as const, size: "sm" as const, position: { top: "3%", right: "2%" }, opacity: 1.0, rotate: 15, colorFilter: "black" as const },
+];
+
 export function Services() {
   return (
-    <section id="services" className="bg-pine py-24 md:py-32">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="services" className="relative py-16 md:py-20 overflow-hidden">
+      {/* Background Image - Pure, no overlays */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/middlebg.png')",
+        }}
+      />
+
+      {/* Origami Decorations */}
+      <OrigamiDecorationGroup decorations={servicesDecorations} />
+
+      <div className="container relative mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <FadeInView>
-            <span className="inline-block text-nile-blue text-sm font-semibold tracking-widest uppercase mb-4">
-              Our Services
+            <span className="inline-block text-nile-blue text-sm font-semibold tracking-widest mb-4">
+              Our services
             </span>
           </FadeInView>
 
           <FadeInView delay={0.1}>
-            <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+            <h2 className="text-nile-blue text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
               End-to-End Business
               <br />
-              <span className="text-kraft">Lifecycle Solutions</span>
+              <span className="text-sunset">Lifecycle Solutions</span>
             </h2>
           </FadeInView>
 
           <FadeInView delay={0.2}>
-            <p className="text-white/70 text-lg">
+            <p className="text-nile-blue/80 text-lg font-semibold">
               From ideation to sustainable growth, we provide comprehensive
               solutions that empower your business at every stage.
             </p>
@@ -91,32 +113,51 @@ export function Services() {
                 <motion.div
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.3 }}
-                  className={`group relative bg-nile-blue/50 backdrop-blur-sm rounded-2xl p-8 md:p-10 lg:p-12 h-full border border-white/5 ${styles.border} transition-all duration-300 overflow-hidden`}
+                  className="group relative h-full"
                 >
-                  {/* Large Background Icon */}
-                  <div className={`absolute -right-8 -bottom-8 transition-opacity duration-500 ${styles.iconBg}`}>
-                    <service.icon className="w-56 h-56 md:w-64 md:h-64" strokeWidth={0.8} />
-                  </div>
+                  <div
+                    className={`relative ${styles.cardBg} backdrop-blur-md p-8 md:p-10 lg:p-12 h-full border-2 border-white/10 ${styles.border} transition-all duration-300 overflow-visible`}
+                    style={{
+                      borderRadius: "0px",
+                      clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
+                    }}
+                  >
+                    {/* Paper-fold effect for top-right corner */}
+                    <div
+                      className="absolute top-0 right-0 w-8 h-8 opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+                        clipPath: "polygon(0 0, 100% 0, 100% 100%)",
+                        borderLeft: "1px solid rgba(255,255,255,0.15)",
+                        borderBottom: "1px solid rgba(255,255,255,0.15)",
+                      }}
+                    />
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Label */}
-                    <span className={`inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-4 ${styles.label}`}>
-                      {service.title}
-                    </span>
+                    {/* Large Background Icon */}
+                    <div className={`absolute -right-8 -bottom-8 transition-opacity duration-500 ${styles.iconBg}`}>
+                      <service.icon className="w-56 h-56 md:w-64 md:h-64" strokeWidth={0.8} />
+                    </div>
 
-                    {/* Title */}
-                    <h3 className="text-white text-2xl md:text-3xl font-semibold mb-4 leading-tight">
-                      {service.title === "Branding" && "Craft Your Identity"}
-                      {service.title === "Website Development" && "Build Your Presence"}
-                      {service.title === "Digital Marketing" && "Amplify Your Reach"}
-                      {service.title === "Business Scaling" && "Accelerate Your Growth"}
-                    </h3>
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Main Title (previously subtitle) */}
+                      <h3 className="text-white text-2xl md:text-3xl font-semibold mb-3 leading-tight">
+                        {service.title === "Branding" && "Craft Your Identity"}
+                        {service.title === "Website Development" && "Build Your Presence"}
+                        {service.title === "Digital Marketing" && "Amplify Your Reach"}
+                        {service.title === "Business Scaling" && "Accelerate Your Growth"}
+                      </h3>
 
-                    {/* Description */}
-                    <p className="text-white/70 text-base md:text-lg lg:text-xl leading-relaxed md:leading-relaxed lg:leading-relaxed">
-                      {service.description}
-                    </p>
+                      {/* Subtitle (previously label) */}
+                      <span className={`inline-block text-xs font-semibold tracking-[0.2em] mb-4 ${styles.label}`}>
+                        {service.title}
+                      </span>
+
+                      {/* Description */}
+                      <p className="text-white/70 text-base md:text-lg lg:text-xl leading-relaxed md:leading-relaxed lg:leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </FadeInView>
