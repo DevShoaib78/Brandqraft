@@ -62,14 +62,14 @@ export function Button({
         className="absolute top-0 right-0 w-4 h-4 pointer-events-none"
         style={{
           background: variant === "outline-dark"
-            ? "linear-gradient(135deg, rgba(4,62,82,0.3) 0%, rgba(4,62,82,0.15) 100%)"
+            ? "linear-gradient(135deg, rgba(4,62,82,0.8) 0%, rgba(4,62,82,0.6) 100%)"
             : "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)",
           clipPath: "polygon(0 0, 100% 0, 100% 100%)",
           borderLeft: variant === "outline-dark"
-            ? "1.5px solid rgba(4,62,82,0.4)"
+            ? "1.5px solid rgba(4,62,82,0.9)"
             : "1.5px solid rgba(255,255,255,0.2)",
           borderBottom: variant === "outline-dark"
-            ? "1.5px solid rgba(4,62,82,0.4)"
+            ? "1.5px solid rgba(4,62,82,0.9)"
             : "1.5px solid rgba(255,255,255,0.2)",
         }}
       />
