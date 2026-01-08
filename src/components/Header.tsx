@@ -33,6 +33,14 @@ export function Header() {
     }
   }, [isMobileMenuOpen]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <motion.header
@@ -99,6 +107,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={`text-base font-semibold tracking-wide transition-colors duration-300 ${
                     isScrolled
                       ? "text-white/80 hover:text-white"
@@ -112,6 +121,7 @@ export function Header() {
               {/* Premium CTA Button */}
               <motion.a
                 href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className={`relative overflow-hidden px-6 py-2.5 text-base font-semibold transition-all duration-300 ${
@@ -177,7 +187,10 @@ export function Header() {
                   <motion.a
                     key={link.href}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      handleNavClick(e, link.href);
+                      setIsMobileMenuOpen(false);
+                    }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + index * 0.05 }}
@@ -194,7 +207,10 @@ export function Header() {
                 >
                   <motion.a
                     href="#contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      handleNavClick(e, "#contact");
+                      setIsMobileMenuOpen(false);
+                    }}
                     whileTap={{ scale: 0.98 }}
                     className="block w-full bg-sunset px-8 py-4 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32]"
                   >
