@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brandqraft.co"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft-khaki.vercel.app"),
   title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
   description:
     "BrandQraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://brandqraft.co",
+    url: "https://brandqraft-khaki.vercel.app",
     siteName: "BrandQraft",
     title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
@@ -56,6 +56,7 @@ export const metadata: Metadata = {
         url: "/favicon.png",
         width: 512,
         height: 512,
+        type: "image/png",
         alt: "BrandQraft - Your Strategic Growth Partner",
       },
     ],
