@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(cat:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install)",
+      "Bash(taskkill:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete BrandQraft website with premium UI/UX\n\n- Add splash screen with elegant logo animation\n- Redesign About section with Vision/Mission cards featuring background icons\n- Create spinning counter effect for stats\n- Redesign Services section with large background icons\n- Refine Approach section with animated shine effect on connecting line\n- Complete overhaul of Why Us section with dynamic layout\n- Enhance CTA section with animated gradient background\n- Redesign Footer with logo and refined layout\n- Add custom Myriad Pro fonts and brand color system\n- Implement smooth scroll with Lenis\n- Add Framer Motion animations throughout\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run build)",
+      "Bash(rm:*)",
+      "Bash(cmd //c \"dir /a\")",
+      "Bash(cmd //c \"rmdir /S /Q \"\"F??Dev Vault?Websites, WebApps?Brandqraft?Brandqraft \\(v1\\)\"\"\")",
+      "Bash(curl:*)",
+      "Bash(start chrome:*)",
+      "Bash(git commit:*)",
+      "Bash(dir:*)",
+      "Bash(cmd //c \"dir /b \"\"origami-and-paper-art-icons-2025-12-06-01-37-42-utc\"\"\")"
+    ]
+  }
+}
