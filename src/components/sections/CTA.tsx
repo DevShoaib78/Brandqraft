@@ -16,7 +16,7 @@ const ctaDecorations = [
 
 export function CTA() {
   return (
-    <section id="contact" className="relative py-16 md:py-20 overflow-hidden">
+    <section id="cta" className="relative py-16 md:py-20 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -55,7 +55,7 @@ export function CTA() {
 
           <FadeInView delay={0.3}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <Button variant="primary" size="lg" href="mailto:info@brandqraft.co" paperCut>
+              <Button variant="primary" size="lg" href="#contact" paperCut>
                 Start a Conversation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -90,7 +90,7 @@ export function CTA() {
                 &ldquo;Business success is a possibility for everyone.&rdquo;
               </p>
               <p className="text-nile-blue/60 text-sm mt-3">
-                <span className="font-bold">Our core belief at BrandQraft</span>
+                <span className="font-bold">Our core belief at brandqraft</span>
               </p>
             </div>
           </FadeInView>

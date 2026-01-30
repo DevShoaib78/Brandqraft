@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { Approach } from "@/components/sections/Approach";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Work } from "@/components/sections/Work";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 
@@ -60,6 +61,7 @@ export default function Home() {
           <Approach />
           <WhyUs />
           <Work />
+          <Testimonials />
           <CTA />
         </main>
         <Footer />

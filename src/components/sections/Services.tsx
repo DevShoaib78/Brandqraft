@@ -137,15 +137,15 @@ export function Services() {
                       <service.icon className="w-56 h-56 md:w-64 md:h-64" strokeWidth={0.8} />
                     </div>
 
-                    {/* Content - SWAPPED: title is now heading, subtitle is now subheading */}
+                    {/* Content */}
                     <div className="relative z-10">
-                      {/* Main Title (was subheading, now heading with accent color) */}
-                      <h3 className={`text-xl md:text-2xl lg:text-3xl font-semibold mb-3 leading-tight ${styles.heading}`}>
+                      {/* Main Title - Now smaller */}
+                      <h3 className={`text-sm md:text-base font-semibold mb-2 leading-tight ${styles.heading}`}>
                         {service.title}
                       </h3>
 
-                      {/* Subtitle (was heading, now smaller white text) */}
-                      <span className="inline-block text-white/80 text-sm font-semibold tracking-wide mb-4">
+                      {/* Subtitle - Now bigger */}
+                      <span className="inline-block text-white text-xl md:text-2xl lg:text-3xl font-semibold tracking-normal mb-4">
                         {service.subtitle}
                       </span>
 
