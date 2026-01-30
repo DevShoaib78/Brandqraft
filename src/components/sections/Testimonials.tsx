@@ -106,7 +106,7 @@ export function Testimonials() {
 
       <div className="container relative mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 lg:mb-20">
           <FadeInView>
             <span className="inline-block text-sea-green text-sm font-semibold tracking-widest mb-4 uppercase">
               Client Stories
@@ -114,7 +114,7 @@ export function Testimonials() {
           </FadeInView>
 
           <FadeInView delay={0.1}>
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
               Trusted by brands
               <br />
               <span className="text-sunset">across industries</span>
@@ -125,18 +125,18 @@ export function Testimonials() {
         {/* Testimonial Carousel */}
         <div className="max-w-5xl mx-auto">
           {/* Carousel Container */}
-          <div className="flex items-center gap-6 md:gap-8 lg:gap-12">
+          <div className="flex items-center gap-3 md:gap-8 lg:gap-12">
             {/* Left Arrow */}
             <button
               onClick={() => paginate(-1)}
               className="group flex-shrink-0 transition-all duration-300"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 text-white/40 group-hover:text-sunset transition-colors duration-300" />
+              <ChevronLeft className="w-6 h-6 md:w-10 md:h-10 text-white/40 group-hover:text-sunset transition-colors duration-300" />
             </button>
 
             {/* Testimonial Card Container */}
-            <div className="relative flex-1 min-h-[220px] md:min-h-[200px] flex items-center">
+            <div className="relative flex-1 min-h-[400px] md:min-h-[280px] flex items-center">
               <AnimatePresence initial={false} custom={direction}>
                 <motion.div
                   key={currentIndex}
@@ -164,25 +164,25 @@ export function Testimonials() {
                   className="absolute w-full"
                 >
                   <div
-                    className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-6 md:p-8 overflow-visible"
+                    className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-5 md:p-8 overflow-visible"
                     style={{
-                      clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
+                      clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%, 0 0)",
                     }}
                   >
                     <PaperFoldCorner size="md" variant="light" className="opacity-50" />
 
                     {/* Quote Icon */}
-                    <Quote className="w-8 h-8 md:w-10 md:h-10 text-sunset/30 mb-3" />
+                    <Quote className="w-7 h-7 md:w-10 md:h-10 text-sunset/30 mb-2 md:mb-3" />
 
                     {/* Testimonial Content */}
-                    <blockquote className="mb-4">
+                    <blockquote className="mb-3 md:mb-4">
                       <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed italic">
                         "{testimonials[currentIndex].content}"
                       </p>
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="border-t border-white/10 pt-3">
+                    <div className="border-t border-white/10 pt-2.5 md:pt-3">
                       <p className="text-white text-sm md:text-base font-semibold mb-0.5">
                         {testimonials[currentIndex].name}
                       </p>
@@ -201,12 +201,12 @@ export function Testimonials() {
               className="group flex-shrink-0 transition-all duration-300"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-8 h-8 md:w-10 md:h-10 text-white/40 group-hover:text-sunset transition-colors duration-300" />
+              <ChevronRight className="w-6 h-6 md:w-10 md:h-10 text-white/40 group-hover:text-sunset transition-colors duration-300" />
             </button>
           </div>
 
           {/* Dots Indicator - Now outside the carousel container */}
-          <div className="flex justify-center gap-2 mt-12">
+          <div className="flex justify-center gap-2 mt-8 md:mt-12">
             {testimonials.map((_, index) => (
               <button
                 key={index}
