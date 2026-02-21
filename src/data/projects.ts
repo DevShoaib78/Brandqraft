@@ -6,7 +6,10 @@ export interface Project {
   tags: string[];
   color: string;
   accentColor: string;
-  // Placeholder colors for image cycling (will be replaced with real images)
+  // Real images (optional — used when actual project photos are available)
+  thumbnail?: string;
+  projectImages?: string[];
+  // Placeholder colors for image cycling (fallback when no real images)
   imagePlaceholders: string[];
   // Detail page content
   challenge: string;
@@ -16,6 +19,46 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    slug: "cyfi",
+    title: "CyFi",
+    category: "Branding, Social Media & Web Development",
+    description:
+      "Complete brand identity, bilingual website, and social media presence for a premium cybersecurity company protecting businesses across Saudi Arabia.",
+    tags: ["Branding", "Web Development", "SEO", "Social Media"],
+    color: "bg-sea-green/30",
+    accentColor: "#1A7A8A",
+    thumbnail: "/project%20images/cyfi1.png",
+    projectImages: [
+      "/project%20images/cyfi1.png",
+      "/project%20images/cyfi2.png",
+      "/project%20images/cyfi3.png",
+    ],
+    imagePlaceholders: [
+      "bg-gradient-to-br from-sea-green/30 to-nile-blue/40",
+      "bg-gradient-to-br from-sea-green/20 to-pine/30",
+      "bg-gradient-to-br from-pine/30 to-sea-green/10",
+    ],
+    challenge:
+      "CyFi arrived with elite capabilities and zero visibility. Founded in Riyadh in 2020, they had the technical depth, the team, and the ambition to become Saudi Arabia's most trusted cybersecurity partner — but no brand to show for it. In a market where trust is the product, being invisible was the biggest vulnerability of all. They needed everything: a brand identity that commanded authority in both English and Arabic, a digital presence that earned credibility, and a social voice that could build a real audience in one of the Middle East's most competitive sectors.",
+    solution:
+      "We started where every great brand starts — with identity. Before a single line of code or caption was written, BrandQraft developed CyFi's complete brand guidelines from scratch: logo system, color palette, typography, iconography, and a visual language built to work flawlessly in both English and Arabic. The aesthetic needed to feel premium, precise, and Saudi-first — a brand that could stand alongside global security giants and hold its ground.\n\nFrom brand, we moved to build. We designed and developed cyfi.sa from the ground up — a fully bilingual website with genuine right-to-left Arabic support. The site was architected for performance and SEO from day one: structured data, semantic markup, optimized metadata, and content built around the exact search terms Saudi businesses use when looking for security partners. An interactive security self-assessment tool was built into the site, giving visitors an immediate reason to engage and giving CyFi a steady stream of qualified leads through WhatsApp.\n\nSimultaneously, we took ownership of CyFi's social media. We built a content strategy rooted in thought leadership — demystifying cybersecurity for Saudi business owners, highlighting regulatory shifts, and positioning CyFi's team as the experts you call before something goes wrong.",
+    results: [
+      "Complete brand identity and design system built from zero — logo, colors, typography, and bilingual usage guidelines",
+      "cyfi.sa launched with full English/Arabic bilingual support and genuine RTL layout",
+      "Page 1 Google rankings achieved for multiple cybersecurity keywords across Saudi Arabia",
+      "Interactive security assessment tool generating consistent qualified leads via WhatsApp",
+      "Active social media presence established, positioning CyFi as a KSA cybersecurity authority",
+    ],
+    servicesProvided: [
+      "Brand Identity & Design Guidelines",
+      "Website Design & Development",
+      "SEO Strategy & Optimization",
+      "Bilingual (AR/EN) Implementation",
+      "Social Media Management",
+      "Content Strategy",
+    ],
+  },
   {
     slug: "elevate-fitness",
     title: "Elevate Fitness",

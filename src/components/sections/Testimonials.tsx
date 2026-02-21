@@ -163,14 +163,13 @@ export function Testimonials() {
                   }}
                   className="absolute w-full"
                 >
+                  <div className="relative">
                   <div
                     className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-5 md:p-8 overflow-visible"
                     style={{
                       clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%, 0 0)",
                     }}
                   >
-                    <PaperFoldCorner size="md" variant="light" className="opacity-50" />
-
                     {/* Quote Icon */}
                     <Quote className="w-7 h-7 md:w-10 md:h-10 text-sunset/30 mb-2 md:mb-3" />
 
@@ -190,6 +189,8 @@ export function Testimonials() {
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
+                  </div>
+                  <PaperFoldCorner size="md" variant="light" className="opacity-50" />
                   </div>
                 </motion.div>
               </AnimatePresence>

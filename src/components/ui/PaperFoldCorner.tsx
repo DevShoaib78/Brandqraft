@@ -1,15 +1,17 @@
 "use client";
 
 interface PaperFoldCornerProps {
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   variant?: "light" | "dark" | "brand";
   className?: string;
 }
 
 const sizeMap = {
-  sm: { fold: 20, shadow: 22 },
-  md: { fold: 32, shadow: 34 },
-  lg: { fold: 28, shadow: 30 },
+  xs: 18,
+  sm: 20,
+  md: 24,
+  lg: 28,
+  xl: 32,
 };
 
 export function PaperFoldCorner({
@@ -17,103 +19,69 @@ export function PaperFoldCorner({
   variant = "light",
   className = "",
 }: PaperFoldCornerProps) {
-  const { fold, shadow } = sizeMap[size];
+  const N = sizeMap[size];
 
-  // Color schemes for different contexts – enhanced for clear fold visibility
-  const colors = {
+  const foldColors = {
     light: {
-      // For dark backgrounds (white fold)
-      foldFront: "rgba(255,255,255,0.30)",
-      foldBack: "rgba(255,255,255,0.50)",
-      shadow: "rgba(0,0,0,0.45)",
-      crease: "rgba(255,255,255,0.55)",
-      highlight: "rgba(255,255,255,0.22)",
+      base: "rgba(8, 75, 100, 0.3)",
+      crease: "rgba(0, 0, 0, 0.15)",
     },
     dark: {
-      // For light backgrounds (dark fold)
-      foldFront: "rgba(4,62,82,0.30)",
-      foldBack: "rgba(4,62,82,0.55)",
-      shadow: "rgba(4,62,82,0.50)",
-      crease: "rgba(4,62,82,0.70)",
-      highlight: "rgba(4,62,82,0.18)",
+      base: "rgba(4, 50, 70, 0.3)",
+      crease: "rgba(0, 0, 0, 0.12)",
     },
     brand: {
-      // For brand-colored elements (sunset accent)
-      foldFront: "rgba(255,255,255,0.25)",
-      foldBack: "rgba(255,255,255,0.42)",
-      shadow: "rgba(0,0,0,0.38)",
-      crease: "rgba(255,255,255,0.48)",
-      highlight: "rgba(255,255,255,0.18)",
+      base: "rgba(160, 70, 35, 0.3)",
+      crease: "rgba(0, 0, 0, 0.15)",
     },
   };
 
-  const c = colors[variant];
+  const c = foldColors[variant];
 
   return (
     <div
       className={`absolute top-0 right-0 pointer-events-none ${className}`}
-      style={{ width: fold, height: fold }}
+      style={{ width: N, height: N, zIndex: 30 }}
     >
-      {/* Shadow underneath the fold */}
+      {/* Fold-back triangle — the paper face folding onto itself.
+          Right angle at bottom-left, hypotenuse = crease diagonal. */}
       <div
-        className="absolute"
         style={{
-          width: shadow,
-          height: shadow,
+          position: "absolute",
           top: 0,
           right: 0,
-          background: `linear-gradient(135deg, transparent 48%, ${c.shadow} 52%)`,
-          filter: "blur(3px)",
-          opacity: 0.8,
+          width: N,
+          height: N,
+          clipPath: "polygon(0 0, 0 100%, 100% 100%)",
+          background: `linear-gradient(135deg, ${c.crease} 0%, ${c.base} 60%, transparent 100%)`,
         }}
       />
 
-      {/* The folded-back paper triangle (visible backside) */}
+      {/* Crease shadow along the fold line */}
       <div
-        className="absolute top-0 right-0"
         style={{
-          width: fold,
-          height: fold,
-          background: `linear-gradient(135deg, ${c.foldBack} 0%, ${c.foldFront} 100%)`,
-          clipPath: "polygon(0 0, 100% 0, 100% 100%)",
-        }}
-      />
-
-      {/* Crease highlight line along the diagonal */}
-      <div
-        className="absolute top-0 right-0"
-        style={{
-          width: fold,
-          height: fold,
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: N,
+          height: N,
           overflow: "hidden",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "141%", // sqrt(2) * 100%
-            height: "2px",
-            background: `linear-gradient(90deg, transparent 0%, ${c.crease} 30%, ${c.crease} 70%, transparent 100%)`,
+            top: -1,
+            left: -1,
+            width: Math.ceil(N * 1.414) + 2,
+            height: 2,
+            background:
+              "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.2) 80%, transparent 100%)",
             transformOrigin: "top left",
             transform: "rotate(45deg)",
           }}
         />
       </div>
-
-      {/* Subtle highlight on the "underneath" part of the page */}
-      <div
-        className="absolute"
-        style={{
-          top: 1,
-          right: fold - 2,
-          width: 0,
-          height: 0,
-          borderTop: `${fold - 2}px solid ${c.highlight}`,
-          borderRight: `${fold - 2}px solid transparent`,
-        }}
-      />
     </div>
   );
 }

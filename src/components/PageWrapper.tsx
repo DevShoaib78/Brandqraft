@@ -5,11 +5,25 @@ import { motion } from "framer-motion";
 import { SplashScreen } from "./SplashScreen";
 
 export function PageWrapper({ children }: { children: React.ReactNode }) {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Always show splash on every page load
+    // Detect if this is a full page load/reload vs. client-side navigation
+    const navEntry = performance.getEntriesByType?.(
+      "navigation"
+    )?.[0] as PerformanceNavigationTiming | undefined;
+    const isReload = navEntry?.type === "reload";
+
+    // Show splash on: first visit (no sessionStorage flag) OR hard page reload
+    const splashShown = sessionStorage.getItem("splashShown");
+    const shouldShow = isReload || !splashShown;
+
+    if (shouldShow) {
+      sessionStorage.setItem("splashShown", "true");
+    }
+
+    setShowSplash(shouldShow);
     setIsReady(true);
   }, []);
 

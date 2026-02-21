@@ -10,12 +10,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft-khaki.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co"),
   title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
   description:
     "BrandQraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
   alternates: {
-    canonical: "https://brandqraft.co",
+    canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co",
   },
   keywords: [
     "branding agency",
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://brandqraft-khaki.vercel.app",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co",
     siteName: "BrandQraft",
     title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
     images: [
       {
-        url: "/favicon.png",
-        width: 512,
-        height: 512,
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
         type: "image/png",
         alt: "BrandQraft - Your Strategic Growth Partner",
       },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
-    images: ["/favicon.png"],
+    images: ["/opengraph-image"],
     creator: "@brandqraft",
   },
   icons: {

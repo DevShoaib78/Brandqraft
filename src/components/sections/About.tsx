@@ -92,7 +92,6 @@ export function About() {
                   clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
                 }}
               >
-                <PaperFoldCorner size="md" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
 
                 {/* Large Background Icon */}
                 <div className="absolute -right-6 top-4 opacity-[0.18] group-hover:opacity-[0.25] transition-opacity duration-500">
@@ -115,6 +114,7 @@ export function About() {
                   </p>
                 </div>
               </div>
+              <PaperFoldCorner size="xl" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
             </motion.div>
           </FadeInView>
 
@@ -133,7 +133,6 @@ export function About() {
                   clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
                 }}
               >
-                <PaperFoldCorner size="md" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
 
                 {/* Large Background Icon */}
                 <div className="absolute -right-4 top-4 opacity-[0.18] group-hover:opacity-[0.25] transition-opacity duration-500">
@@ -155,25 +154,25 @@ export function About() {
                   </p>
                 </div>
               </div>
+              <PaperFoldCorner size="xl" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
             </motion.div>
           </FadeInView>
         </div>
 
         {/* Stats Section with paper fold */}
         <FadeInView delay={0.3}>
-          <div
-            className="relative mb-20 overflow-hidden"
-            style={{
-              clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%)",
-            }}
-          >
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
-            <div className="absolute inset-0 border-2 border-white/[0.15]" />
+          <div className="relative mb-20">
+            <div
+              className="relative overflow-hidden"
+              style={{
+                clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%)",
+              }}
+            >
+              {/* Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
+              <div className="absolute inset-0 border-2 border-white/[0.15]" />
 
-            <PaperFoldCorner size="md" variant="light" />
-
-            {/* Decorative corner accents */}
+              {/* Decorative corner accents */}
             <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-sunset/50" />
             <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-sea-green/50" />
 
@@ -188,6 +187,8 @@ export function About() {
                 </div>
               ))}
             </div>
+            </div>
+            <PaperFoldCorner size="xl" variant="light" />
           </div>
         </FadeInView>
 

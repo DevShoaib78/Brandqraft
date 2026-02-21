@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 import { PaperFoldCorner } from "@/components/ui/PaperFoldCorner";
 
@@ -99,26 +100,39 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-3 gap-6">
-            {project.imagePlaceholders.map((placeholder, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="relative overflow-hidden"
-                style={{
-                  clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%)",
-                }}
-              >
-                <PaperFoldCorner size="sm" variant="light" />
-                <div className={`aspect-[4/3] ${placeholder}`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/15 text-sm font-medium">
-                      Screenshot {index + 1}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
+            {(project.projectImages ?? project.imagePlaceholders).map((src, index) => (
+              <div key={index} className="relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="overflow-hidden"
+                  style={{
+                    clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%)",
+                  }}
+                >
+                  {project.projectImages ? (
+                    <div className="relative aspect-video">
+                      <Image
+                        src={src}
+                        alt={`${project.title} — screenshot ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`aspect-video ${src}`}>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-white/15 text-sm font-medium">
+                          Screenshot {index + 1}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+                <PaperFoldCorner size="md" variant="light" />
+              </div>
             ))}
           </div>
         </div>
@@ -141,9 +155,13 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
               <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6 leading-tight">
                 What they needed
               </h2>
-              <p className="text-white/60 text-base md:text-lg leading-relaxed">
-                {project.challenge}
-              </p>
+              <div className="space-y-4">
+                {project.challenge.split("\n\n").map((para, i) => (
+                  <p key={i} className="text-white/60 text-base md:text-lg leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </motion.div>
 
             {/* Solution */}
@@ -159,9 +177,13 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
               <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6 leading-tight">
                 What we delivered
               </h2>
-              <p className="text-white/60 text-base md:text-lg leading-relaxed">
-                {project.solution}
-              </p>
+              <div className="space-y-4">
+                {project.solution.split("\n\n").map((para, i) => (
+                  <p key={i} className="text-white/60 text-base md:text-lg leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
@@ -199,6 +221,7 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
       {/* Results */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-6 lg:px-12">
+          <div className="relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +234,6 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
           >
             <div className="absolute inset-0 bg-white/[0.03]" />
             <div className="absolute inset-0 border-2 border-white/[0.1]" />
-            <PaperFoldCorner size="md" variant="light" />
 
             <div className="relative">
               <span className="inline-block text-xs font-semibold tracking-[0.2em] mb-6 uppercase"
@@ -241,6 +263,8 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
               </div>
             </div>
           </motion.div>
+          <PaperFoldCorner size="xl" variant="light" />
+          </div>
         </div>
       </section>
 
@@ -260,16 +284,18 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
               Let&apos;s discuss how BrandQraft can transform your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/#contact"
-                className="relative inline-flex items-center justify-center bg-sunset px-8 py-4 text-base font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32] overflow-hidden"
-                style={{
-                  clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
-                }}
-              >
+              <div className="relative inline-flex">
+                <Link
+                  href="/#contact"
+                  className="inline-flex items-center justify-center bg-sunset px-8 py-4 text-base font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32] overflow-hidden"
+                  style={{
+                    clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
+                  }}
+                >
+                  <span className="relative z-10">Start Your Project</span>
+                </Link>
                 <PaperFoldCorner size="sm" variant="brand" />
-                <span className="relative z-10">Start Your Project</span>
-              </Link>
+              </div>
 
               <Link
                 href="/#work"

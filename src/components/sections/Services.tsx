@@ -130,8 +130,6 @@ export function Services() {
                       clipPath: "polygon(0 0, calc(100% - 32px) 0, 100% 32px, 100% 100%, 0 100%, 0 0)",
                     }}
                   >
-                    <PaperFoldCorner size="md" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
-
                     {/* Large Background Icon */}
                     <div className={`absolute -right-8 -bottom-8 transition-opacity duration-500 ${styles.iconBg}`}>
                       <service.icon className="w-56 h-56 md:w-64 md:h-64" strokeWidth={0.8} />
@@ -155,6 +153,7 @@ export function Services() {
                       </p>
                     </div>
                   </div>
+                  <PaperFoldCorner size="xl" variant="light" className="opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
                 </motion.div>
               </FadeInView>
             );

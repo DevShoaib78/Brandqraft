@@ -60,15 +60,24 @@ export function Button({
   const foldVariant = variant === "outline-dark" ? "dark" : "brand";
 
   if (href) {
-    return (
+    const link = (
       <motion.a href={href} className={combinedStyles} style={paperCutStyle} {...motionProps}>
-        {paperCut && <PaperFoldCorner size="sm" variant={foldVariant} />}
         <span className="relative z-10 flex items-center">{children}</span>
       </motion.a>
     );
+
+    if (paperCut) {
+      return (
+        <div className="relative inline-flex">
+          {link}
+          <PaperFoldCorner size="sm" variant={foldVariant} />
+        </div>
+      );
+    }
+    return link;
   }
 
-  return (
+  const button = (
     <motion.button
       type={type}
       onClick={onClick}
@@ -76,8 +85,17 @@ export function Button({
       style={paperCutStyle}
       {...motionProps}
     >
-      {paperCut && <PaperFoldCorner size="sm" variant={foldVariant} />}
       <span className="relative z-10 flex items-center">{children}</span>
     </motion.button>
   );
+
+  if (paperCut) {
+    return (
+      <div className="relative inline-flex">
+        {button}
+        <PaperFoldCorner size="sm" variant={foldVariant} />
+      </div>
+    );
+  }
+  return button;
 }

@@ -55,5 +55,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
-  return <ProjectDetailClient slug={slug} />;
+  const project = projects.find((p) => p.slug === slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co";
+
+  const breadcrumbData = project
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": `${siteUrl}/#work`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.title,
+            "item": `${siteUrl}/projects/${project.slug}`,
+          },
+        ],
+      }
+    : null;
+
+  return (
+    <>
+      {breadcrumbData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+        />
+      )}
+      <ProjectDetailClient slug={slug} />
+    </>
+  );
 }

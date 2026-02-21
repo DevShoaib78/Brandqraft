@@ -51,30 +51,21 @@ export function Header() {
         className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8"
       >
         {/* Floating Navbar Container with paper-fold corner */}
-        <div
-          className={`relative mx-auto mt-4 max-w-6xl ${
-            isScrolled
-              ? "bg-nile-blue/95 backdrop-blur-xl shadow-2xl shadow-nile-blue/20"
-              : "bg-transparent backdrop-blur-none shadow-none"
-          }`}
-          style={{
-            borderRadius: "0px",
-            padding: isScrolled ? "0.625rem 1rem" : "0.75rem 1rem",
-            clipPath: "polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%)",
-            transition: "background-color 0.7s cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1), padding 0.5s ease-out",
-          }}
-        >
-          {/* Enhanced Paper-fold effect for top-right corner */}
+        <div className="relative mx-auto mt-4 max-w-6xl">
           <div
             className={`${
-              isScrolled ? "opacity-100" : "opacity-0"
+              isScrolled
+                ? "bg-nile-blue/95 backdrop-blur-xl shadow-2xl shadow-nile-blue/20"
+                : "bg-transparent backdrop-blur-none shadow-none"
             }`}
-            style={{ transition: "opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1)" }}
+            style={{
+              borderRadius: "0px",
+              padding: isScrolled ? "0.625rem 1rem" : "0.75rem 1rem",
+              clipPath: "polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%)",
+              transition: "background-color 0.7s cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1), padding 0.5s ease-out",
+            }}
           >
-            <PaperFoldCorner size="lg" variant="light" />
-          </div>
-
-          <nav className="flex items-center justify-between px-2 sm:px-4">
+            <nav className="flex items-center justify-between px-2 sm:px-4">
             {/* Logo with smooth transition */}
             <a href="#" className="relative flex items-center">
               <div className="relative h-14 w-44 sm:h-16 sm:w-48">
@@ -119,23 +110,25 @@ export function Header() {
               ))}
 
               {/* Premium CTA Button with paper-fold */}
-              <motion.a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, "#contact")}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className={`relative overflow-hidden px-6 py-2.5 text-base font-semibold transition-all duration-300 ${
-                  isScrolled
-                    ? "bg-sunset text-white hover:bg-[#c85a32]"
-                    : "bg-nile-blue text-white hover:bg-nile-blue/90"
-                }`}
-                style={{
-                  clipPath: "polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%)",
-                }}
-              >
-                <PaperFoldCorner size="sm" variant="brand" />
-                <span className="relative z-10">Craft a Project</span>
-              </motion.a>
+              <div className="relative">
+                <motion.a
+                  href="#contact"
+                  onClick={(e) => handleNavClick(e, "#contact")}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className={`overflow-hidden px-6 py-2.5 text-base font-semibold transition-all duration-300 inline-flex items-center ${
+                    isScrolled
+                      ? "bg-sunset text-white hover:bg-[#c85a32]"
+                      : "bg-nile-blue text-white hover:bg-nile-blue/90"
+                  }`}
+                  style={{
+                    clipPath: "polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%)",
+                  }}
+                >
+                  <span className="relative z-10">Craft a Project</span>
+                </motion.a>
+                <PaperFoldCorner size="xs" variant="brand" />
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -149,6 +142,13 @@ export function Header() {
               <Menu size={26} />
             </button>
           </nav>
+          </div>
+          <div
+            className={`${isScrolled ? "opacity-100" : "opacity-0"}`}
+            style={{ transition: "opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1)" }}
+          >
+            <PaperFoldCorner size="lg" variant="light" />
+          </div>
         </div>
       </motion.header>
 
@@ -209,21 +209,23 @@ export function Header() {
                   transition={{ delay: 0.3 }}
                   className="mt-8"
                 >
-                  <motion.a
-                    href="#contact"
-                    onClick={(e) => {
-                      handleNavClick(e, "#contact");
-                      setIsMobileMenuOpen(false);
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    className="relative block w-full bg-sunset px-8 py-4 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32] overflow-hidden"
-                    style={{
-                      clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
-                    }}
-                  >
+                  <div className="relative">
+                    <motion.a
+                      href="#contact"
+                      onClick={(e) => {
+                        handleNavClick(e, "#contact");
+                        setIsMobileMenuOpen(false);
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block w-full bg-sunset px-8 py-4 text-center text-lg font-semibold text-white transition-colors duration-300 hover:bg-[#c85a32] overflow-hidden"
+                      style={{
+                        clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
+                      }}
+                    >
+                      <span className="relative z-10">Craft a Project</span>
+                    </motion.a>
                     <PaperFoldCorner size="sm" variant="brand" />
-                    <span className="relative z-10">Craft a Project</span>
-                  </motion.a>
+                  </div>
                 </motion.div>
               </motion.nav>
             </div>

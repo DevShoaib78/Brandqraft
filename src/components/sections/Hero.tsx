@@ -163,10 +163,10 @@ export function Hero() {
                   clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
                 }}
               >
-                <PaperFoldCorner size="sm" variant="brand" />
                 <span className="relative z-10">Start Your Project</span>
                 <ArrowRight className="ml-2 w-5 h-5 relative z-10" />
               </a>
+              <PaperFoldCorner size="sm" variant="brand" />
             </motion.div>
 
             {/* Secondary CTA with paper-fold */}
@@ -182,9 +182,9 @@ export function Hero() {
                   clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)",
                 }}
               >
-                <PaperFoldCorner size="sm" variant="dark" />
                 <span className="relative z-10">View Our Work</span>
               </a>
+              <PaperFoldCorner size="sm" variant="dark" />
             </motion.div>
           </motion.div>
         </div>

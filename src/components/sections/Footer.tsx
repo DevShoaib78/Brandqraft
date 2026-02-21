@@ -213,19 +213,21 @@ export function Footer() {
                   </div>
 
                   {/* Submit Button */}
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group relative w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-sunset hover:bg-sunset/90 text-white font-semibold transition-all duration-300 overflow-hidden"
-                    style={{ clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)" }}
-                  >
+                  <div className="relative w-full md:w-auto">
+                    <motion.button
+                      type="submit"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-sunset hover:bg-sunset/90 text-white font-semibold transition-all duration-300 overflow-hidden"
+                      style={{ clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)" }}
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        <span>Send Message</span>
+                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </span>
+                    </motion.button>
                     <PaperFoldCorner size="sm" variant="brand" />
-                    <span className="relative z-10 flex items-center gap-2">
-                      <span>Send Message</span>
-                      <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </motion.button>
+                  </div>
                 </form>
               </div>
             </FadeInView>
