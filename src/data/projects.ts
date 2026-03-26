@@ -1,3 +1,60 @@
+// === Case Study Story Types ===
+
+export interface StoryHook {
+  text: string[];
+  details?: { label: string; value: string }[];
+}
+
+export interface ChapterLogo {
+  src: string;
+  narrative: string[];
+}
+
+export interface BrandColor {
+  name: string;
+  hex: string;
+}
+
+export interface BrandPillar {
+  title: string;
+  description: string;
+}
+
+export interface ChapterHighlight {
+  title: string;
+  description: string;
+}
+
+export interface ChapterStat {
+  value: string;
+  label: string;
+}
+
+export interface ProjectChapter {
+  number: string;
+  label: string;
+  title: string;
+  narrative: string[];
+  logo?: ChapterLogo;
+  brandColors?: BrandColor[];
+  brandPillars?: BrandPillar[];
+  highlights?: ChapterHighlight[];
+  stats?: ChapterStat[];
+  images?: string[];
+}
+
+export interface ProjectStory {
+  tagline: string;
+  hook: StoryHook;
+  chapters: ProjectChapter[];
+  conclusion: {
+    quote: string;
+    narrative: string[];
+  };
+}
+
+// === Core Project Type ===
+
 export interface Project {
   slug: string;
   title: string;
@@ -16,6 +73,8 @@ export interface Project {
   solution: string;
   results: string[];
   servicesProvided: string[];
+  // Extended case study narrative (optional — enables cinematic layout)
+  story?: ProjectStory;
 }
 
 export const projects: Project[] = [
@@ -58,6 +117,106 @@ export const projects: Project[] = [
       "Social Media Management",
       "Content Strategy",
     ],
+    story: {
+      tagline: "From Zero Visibility to Industry Authority",
+      hook: {
+        text: [
+          "CyFi arrived with elite cybersecurity capabilities — and zero brand presence.",
+          "Founded in Riyadh in 2020, they had the technical depth to protect Saudi Arabia's most critical digital infrastructure. What they lacked was equally critical: a brand that could communicate that authority. In a market where trust is the product, being invisible was their biggest vulnerability. They needed everything — a brand identity that commanded authority in both English and Arabic, a digital presence that earned credibility, and a social voice that could build a real audience in one of the Middle East's most competitive sectors.",
+        ],
+        details: [
+          { label: "Industry", value: "Cybersecurity" },
+          { label: "Location", value: "Riyadh, Saudi Arabia" },
+          { label: "Founded", value: "2020" },
+          { label: "Scope", value: "End-to-End Partnership" },
+        ],
+      },
+      chapters: [
+        {
+          number: "01",
+          label: "The Beginning",
+          title: "Brand Foundation",
+          narrative: [
+            "Every great brand starts with identity. Before a single line of code was written or a social post drafted, BrandQraft went deep into CyFi's DNA — their mission, their market position, their competition, and their aspiration to become Saudi Arabia's most trusted cybersecurity name.",
+            "The challenge was clear: build a brand that commands authority in both English and Arabic, in a sector where credibility isn't given — it's earned.",
+          ],
+          logo: {
+            src: "/project%20images/cyfilogo.png",
+            narrative: [
+              "The CyFi mark was designed to sit at the intersection of cybersecurity precision and approachable trust. Sharp geometry and clean lines communicate technical authority, while the balanced composition ensures the brand feels premium without being intimidating.",
+              "The mark needed to function flawlessly across both English and Arabic contexts — on digital platforms, print materials, and presentation decks alike. Every element was crafted with intent: from the letterforms to the spacing, the logo embodies CyFi's mission of making cybersecurity accessible yet authoritative.",
+            ],
+          },
+          brandColors: [
+            { name: "Deep Navy", hex: "#0D1636" },
+            { name: "Dark Indigo", hex: "#171F4B" },
+            { name: "Royal Indigo", hex: "#363F91" },
+            { name: "Sky Blue", hex: "#579CD1" },
+            { name: "Soft Teal", hex: "#7DC6BF" },
+            { name: "Magenta Pink", hex: "#CE5DA3" },
+            { name: "Off-White", hex: "#F8F9FA" },
+          ],
+          brandPillars: [
+            { title: "Authority", description: "Positioning CyFi as a market leader, not just a service provider" },
+            { title: "Trust", description: "Building visual and verbal credibility in every touchpoint" },
+            { title: "Innovation", description: "Reflecting CyFi's cutting-edge technical capabilities" },
+            { title: "Precision", description: "Meticulous attention to detail that mirrors cybersecurity discipline" },
+          ],
+        },
+        {
+          number: "02",
+          label: "Digital Presence",
+          title: "Building the Platform",
+          narrative: [
+            "With the brand foundation locked in, we moved to build CyFi's digital home. cyfi.sa was designed and developed from the ground up — not as a brochure site, but as a conversion engine.",
+            "Full bilingual support with genuine right-to-left Arabic layout. SEO architecture baked in from day one: structured data, semantic markup, and content strategically mapped to the exact search terms Saudi businesses use when looking for cybersecurity partners.",
+          ],
+          highlights: [
+            { title: "Bilingual Architecture", description: "Full English & Arabic with native RTL support across every page and component" },
+            { title: "SEO-First Development", description: "Structured data, semantic markup, and metadata optimized for Saudi market search terms" },
+            { title: "Lead Generation Engine", description: "Interactive security self-assessment tool generating qualified leads via WhatsApp" },
+            { title: "Performance Optimized", description: "Built for speed, accessibility, and search engine visibility from the ground up" },
+          ],
+          images: [
+            "/project%20images/cyfi1.png",
+            "/project%20images/cyfi2.png",
+          ],
+        },
+        {
+          number: "03",
+          label: "Growth Phase",
+          title: "Amplifying the Voice",
+          narrative: [
+            "A brand without a voice is just a logo. BrandQraft took ownership of CyFi's social media presence, building a content strategy rooted in thought leadership.",
+            "The goal wasn't just to post — it was to position CyFi as the experts Saudi businesses call before something goes wrong. We demystified cybersecurity for business owners, highlighted regulatory shifts in the KSA market, and turned complex technical concepts into clear, compelling content.",
+          ],
+          stats: [
+            { value: "Thought Leadership", label: "Content strategy built around deep expertise and market authority" },
+            { value: "Brand Voice", label: "Consistent, authoritative tone established across all platforms" },
+            { value: "Audience Growth", label: "Targeted community building in the KSA cybersecurity market" },
+            { value: "Visual Consistency", label: "Unified brand expression from social posts to presentations" },
+          ],
+          images: [
+            "/project%20images/cyfi3.png",
+          ],
+        },
+        {
+          number: "04",
+          label: "The Transformation",
+          title: "Execution & Impact",
+          narrative: [
+            "The numbers tell one story. The transformation tells another. CyFi went from an unknown entity to a recognized authority in Saudi Arabia's cybersecurity landscape — a journey measured not just in metrics, but in the trust they've earned and the partnerships they've built.",
+          ],
+        },
+      ],
+      conclusion: {
+        quote: "From zero visibility to industry authority — this is what a true brand partnership delivers.",
+        narrative: [
+          "CyFi's transformation is a testament to what's possible when strategy, design, and execution move as one. BrandQraft didn't just build a brand — we became an extension of the CyFi team, invested in their growth at every stage.",
+          "This is how we work. This is what we deliver.",
+        ],
+      },
+    },
   },
   {
     slug: "elevate-fitness",
