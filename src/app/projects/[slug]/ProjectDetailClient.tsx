@@ -15,6 +15,7 @@ import type {
   ChapterStat,
 } from "@/data/projects";
 import { PaperFoldCorner } from "@/components/ui/PaperFoldCorner";
+import { Footer } from "@/components/sections/Footer";
 
 interface ProjectDetailClientProps {
   slug: string;
@@ -32,7 +33,7 @@ function LogoSection({ logo, project }: { logo: ChapterLogo; project: Project })
       className="mb-20"
     >
       {/* Logo display — large, immersive */}
-      <div className="relative flex items-center justify-center py-24 md:py-32 mb-12 overflow-hidden"
+      <div className="relative aspect-[16/6] mb-12 overflow-hidden"
         style={{
           clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)",
           background: "rgba(255,255,255,0.025)",
@@ -47,10 +48,10 @@ function LogoSection({ logo, project }: { logo: ChapterLogo; project: Project })
         <Image
           src={logo.src}
           alt={`${project.title} Logo`}
-          width={320}
-          height={160}
+          fill
           className="relative z-10 object-contain"
           priority
+          sizes="100vw"
         />
         <PaperFoldCorner size="xl" variant="light" />
       </div>
@@ -309,7 +310,7 @@ function ChapterSection({
   project: Project;
   index: number;
 }) {
-  const isImpactChapter = chapter.number === "04";
+  const isImpactChapter = chapter.number === "04" || !!chapter.isImpact;
 
   return (
     <section className="py-20 md:py-28 relative overflow-hidden border-t border-white/[0.05]">
@@ -582,8 +583,8 @@ function CinematicProjectPage({ project }: { project: Project }) {
         </div>
       </section>
 
-      {/* ── CTA ─────────────────────────────────────────────────────────── */}
-      <CTASection project={project} />
+      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      <Footer />
     </main>
   );
 }
@@ -782,8 +783,8 @@ function GenericProjectPage({ project }: { project: Project }) {
         </div>
       </section>
 
-      {/* CTA */}
-      <CTASection project={project} />
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
