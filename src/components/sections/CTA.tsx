@@ -32,7 +32,7 @@ export function CTA() {
       <div className="container relative mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <FadeInView>
-            <span className="inline-block text-nile-blue text-sm md:text-base font-bold tracking-widest mb-4 uppercase">
+            <span className="inline-block text-nile-blue text-base font-semibold tracking-widest mb-4">
               Ready to Start?
             </span>
           </FadeInView>

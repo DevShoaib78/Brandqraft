@@ -39,8 +39,8 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-block text-nile-blue/70 text-sm md:text-base font-bold tracking-widest mb-6 uppercase">
-              Branding, digital marketing & business scaling
+            <span className="inline-block text-nile-blue text-base font-semibold tracking-widest mb-6">
+              Branding, Digital Marketing & Business Scaling
             </span>
           </motion.div>
 

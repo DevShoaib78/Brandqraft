@@ -131,8 +131,8 @@ export function Work() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-20">
           <div>
             <FadeInView>
-              <span className="inline-block text-sea-green text-sm font-semibold tracking-widest mb-4 uppercase">
-                Selected work
+              <span className="inline-block text-sea-green text-base font-semibold tracking-widest mb-4">
+                Selected Work
               </span>
             </FadeInView>
 

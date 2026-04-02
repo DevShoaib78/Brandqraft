@@ -52,8 +52,8 @@ export function Approach() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16 md:mb-20">
           <FadeInView>
-            <span className="inline-block text-sea-green text-sm font-semibold tracking-widest mb-4 uppercase">
-              Our approach
+            <span className="inline-block text-sea-green text-base font-semibold tracking-widest mb-4">
+              Our Approach
             </span>
           </FadeInView>
 

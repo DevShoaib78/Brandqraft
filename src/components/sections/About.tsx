@@ -54,8 +54,8 @@ export function About() {
         {/* Section Header - Centered */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <FadeInView>
-            <span className="inline-block text-sea-green text-sm font-semibold tracking-widest mb-4 uppercase">
-              About us
+            <span className="inline-block text-sea-green text-base font-semibold tracking-widest mb-4">
+              About Us
             </span>
           </FadeInView>
 

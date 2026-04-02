@@ -90,8 +90,8 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <FadeInView>
-            <span className="inline-block text-nile-blue text-sm font-semibold tracking-widest mb-4 uppercase">
-              Our services
+            <span className="inline-block text-nile-blue text-base font-semibold tracking-widest mb-4">
+              Our Services
             </span>
           </FadeInView>
 
