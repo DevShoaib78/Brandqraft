@@ -92,6 +92,7 @@ export const projects: Project[] = [
     color: "bg-sea-green/30",
     accentColor: "#1A7A8A",
     thumbnail: "/project%20images/cyfilogo.png",
+    thumbnailFit: "contain",
     projectImages: [
       "/project%20images/cyfi1.png",
       "/project%20images/cyfi2.png",
