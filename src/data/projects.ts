@@ -64,6 +64,7 @@ export interface Project {
   tags: string[];
   color: string;
   accentColor: string;
+  chapterNumberColor?: string; // Overrides accentColor for chapter step numbers (01, 02, 03...)
   // Real images (optional — used when actual project photos are available)
   thumbnail?: string;
   thumbnailFit?: "cover" | "contain";
@@ -80,10 +81,10 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // ─── CyFi ────────────────────────────────────────────────────────────────
+  // ─── Cyfi ────────────────────────────────────────────────────────────────
   {
     slug: "cyfi",
-    title: "CyFi",
+    title: "Cyfi",
     category: "Branding, Social Media & Web Development",
     description:
       "Complete brand identity, bilingual website, and social media presence for a premium cybersecurity company protecting businesses across Saudi Arabia.",
@@ -102,15 +103,15 @@ export const projects: Project[] = [
       "bg-gradient-to-br from-pine/30 to-sea-green/10",
     ],
     challenge:
-      "CyFi arrived with elite capabilities and zero visibility. Founded in Riyadh in 2020, they had the technical depth, the team, and the ambition to become Saudi Arabia's most trusted cybersecurity partner — but no brand to show for it. In a market where trust is the product, being invisible was the biggest vulnerability of all. They needed everything: a brand identity that commanded authority in both English and Arabic, a digital presence that earned credibility, and a social voice that could build a real audience in one of the Middle East's most competitive sectors.",
+      "Cyfi arrived with elite capabilities and zero visibility. Founded in Riyadh in 2020, they had the technical depth, the team, and the ambition to become Saudi Arabia's most trusted cybersecurity partner — but no brand to show for it. In a market where trust is the product, being invisible was the biggest vulnerability of all. They needed everything: a brand identity that commanded authority in both English and Arabic, a digital presence that earned credibility, and a social voice that could build a real audience in one of the Middle East's most competitive sectors.",
     solution:
-      "We started where every great brand starts — with identity. Before a single line of code or caption was written, BrandQraft developed CyFi's complete brand guidelines from scratch: logo system, color palette, typography, iconography, and a visual language built to work flawlessly in both English and Arabic. The aesthetic needed to feel premium, precise, and Saudi-first — a brand that could stand alongside global security giants and hold its ground.\n\nFrom brand, we moved to build. We designed and developed cyfi.sa from the ground up — a fully bilingual website with genuine right-to-left Arabic support. The site was architected for performance and SEO from day one: structured data, semantic markup, optimized metadata, and content built around the exact search terms Saudi businesses use when looking for security partners. An interactive security self-assessment tool was built into the site, giving visitors an immediate reason to engage and giving CyFi a steady stream of qualified leads through WhatsApp.\n\nSimultaneously, we took ownership of CyFi's social media. We built a content strategy rooted in thought leadership — demystifying cybersecurity for Saudi business owners, highlighting regulatory shifts, and positioning CyFi's team as the experts you call before something goes wrong.",
+      "We started where every great brand starts — with identity. Before a single line of code or caption was written, brandqraft developed Cyfi's complete brand guidelines from scratch: logo system, color palette, typography, iconography, and a visual language built to work flawlessly in both English and Arabic. The aesthetic needed to feel premium, precise, and Saudi-first — a brand that could stand alongside global security giants and hold its ground.\n\nFrom brand, we moved to build. We designed and developed cyfi.sa from the ground up — a fully bilingual website with genuine right-to-left Arabic support. The site was architected for performance and SEO from day one: structured data, semantic markup, optimized metadata, and content built around the exact search terms Saudi businesses use when looking for security partners. An interactive security self-assessment tool was built into the site, giving visitors an immediate reason to engage and giving Cyfi a steady stream of qualified leads through WhatsApp.\n\nSimultaneously, we took ownership of Cyfi's social media. We built a content strategy rooted in thought leadership — demystifying cybersecurity for Saudi business owners, highlighting regulatory shifts, and positioning Cyfi's team as the experts you call before something goes wrong.",
     results: [
       "Complete brand identity and design system built from zero — logo, colors, typography, and bilingual usage guidelines",
       "cyfi.sa launched with full English/Arabic bilingual support and genuine RTL layout",
       "Page 1 Google rankings achieved for multiple cybersecurity keywords across Saudi Arabia",
       "Interactive security assessment tool generating consistent qualified leads via WhatsApp",
-      "Active social media presence established, positioning CyFi as a KSA cybersecurity authority",
+      "Active social media presence established, positioning Cyfi as a KSA cybersecurity authority",
     ],
     servicesProvided: [
       "Brand Identity & Design Guidelines",
@@ -124,7 +125,7 @@ export const projects: Project[] = [
       tagline: "From Zero Visibility to Industry Authority",
       hook: {
         text: [
-          "CyFi arrived with elite cybersecurity capabilities — and zero brand presence.",
+          "Cyfi arrived with elite cybersecurity capabilities — and zero brand presence.",
           "Founded in Riyadh in 2020, they had the technical depth to protect Saudi Arabia's most critical digital infrastructure. What they lacked was equally critical: a brand that could communicate that authority. In a market where trust is the product, being invisible was their biggest vulnerability. They needed everything — a brand identity that commanded authority in both English and Arabic, a digital presence that earned credibility, and a social voice that could build a real audience in one of the Middle East's most competitive sectors.",
         ],
         details: [
@@ -140,14 +141,14 @@ export const projects: Project[] = [
           label: "The Beginning",
           title: "Brand Foundation",
           narrative: [
-            "Every great brand starts with identity. Before a single line of code was written or a social post drafted, BrandQraft went deep into CyFi's DNA — their mission, their market position, their competition, and their aspiration to become Saudi Arabia's most trusted cybersecurity name.",
+            "Every great brand starts with identity. Before a single line of code was written or a social post drafted, brandqraft went deep into Cyfi's DNA — their mission, their market position, their competition, and their aspiration to become Saudi Arabia's most trusted cybersecurity name.",
             "The challenge was clear: build a brand that commands authority in both English and Arabic, in a sector where credibility isn't given — it's earned.",
           ],
           logo: {
             src: "/project%20images/cyfi5.png",
             narrative: [
-              "The CyFi mark was designed to sit at the intersection of cybersecurity precision and approachable trust. Sharp geometry and clean lines communicate technical authority, while the balanced composition ensures the brand feels premium without being intimidating.",
-              "The mark needed to function flawlessly across both English and Arabic contexts — on digital platforms, print materials, and presentation decks alike. Every element was crafted with intent: from the letterforms to the spacing, the logo embodies CyFi's mission of making cybersecurity accessible yet authoritative.",
+              "The Cyfi mark was designed to sit at the intersection of cybersecurity precision and approachable trust. Sharp geometry and clean lines communicate technical authority, while the balanced composition ensures the brand feels premium without being intimidating.",
+              "The mark needed to function flawlessly across both English and Arabic contexts — on digital platforms, print materials, and presentation decks alike. Every element was crafted with intent: from the letterforms to the spacing, the logo embodies Cyfi's mission of making cybersecurity accessible yet authoritative.",
             ],
           },
           brandColors: [
@@ -165,7 +166,7 @@ export const projects: Project[] = [
           label: "Digital Presence",
           title: "Building the Platform",
           narrative: [
-            "With the brand foundation locked in, we moved to build CyFi's digital home. cyfi.sa was designed and developed from the ground up — not as a brochure site, but as a conversion engine.",
+            "With the brand foundation locked in, we moved to build Cyfi's digital home. cyfi.sa was designed and developed from the ground up — not as a brochure site, but as a conversion engine.",
             "Full bilingual support with genuine right-to-left Arabic layout. SEO architecture baked in from day one: structured data, semantic markup, and content strategically mapped to the exact search terms Saudi businesses use when looking for cybersecurity partners.",
           ],
           highlights: [
@@ -184,8 +185,8 @@ export const projects: Project[] = [
           label: "Growth Phase",
           title: "Amplifying the Voice",
           narrative: [
-            "A brand without a voice is just a logo. BrandQraft took ownership of CyFi's social media presence, building a content strategy rooted in thought leadership.",
-            "The goal wasn't just to post — it was to position CyFi as the experts Saudi businesses call before something goes wrong. We demystified cybersecurity for business owners, highlighted regulatory shifts in the KSA market, and turned complex technical concepts into clear, compelling content.",
+            "A brand without a voice is just a logo. brandqraft took ownership of Cyfi's social media presence, building a content strategy rooted in thought leadership.",
+            "The goal wasn't just to post — it was to position Cyfi as the experts Saudi businesses call before something goes wrong. We demystified cybersecurity for business owners, highlighted regulatory shifts in the KSA market, and turned complex technical concepts into clear, compelling content.",
           ],
           stats: [
             { value: "Thought Leadership", label: "Content strategy built around deep expertise and market authority" },
@@ -202,14 +203,14 @@ export const projects: Project[] = [
           label: "The Transformation",
           title: "Execution & Impact",
           narrative: [
-            "The numbers tell one story. The transformation tells another. CyFi went from an unknown entity to a recognized authority in Saudi Arabia's cybersecurity landscape — a journey measured not just in metrics, but in the trust they've earned and the partnerships they've built.",
+            "The numbers tell one story. The transformation tells another. Cyfi went from an unknown entity to a recognized authority in Saudi Arabia's cybersecurity landscape — a journey measured not just in metrics, but in the trust they've earned and the partnerships they've built.",
           ],
         },
       ],
       conclusion: {
         quote: "From zero visibility to industry authority — this is what a true brand partnership delivers.",
         narrative: [
-          "CyFi's transformation is a testament to what's possible when strategy, design, and execution move as one. BrandQraft didn't just build a brand — we became an extension of the CyFi team, invested in their growth at every stage.",
+          "Cyfi's transformation is a testament to what's possible when strategy, design, and execution move as one. brandqraft didn't just build a brand — we became an extension of the Cyfi team, invested in their growth at every stage.",
           "This is how we work. This is what we deliver.",
         ],
       },
@@ -226,6 +227,7 @@ export const projects: Project[] = [
     tags: ["Web Development", "UI/UX Design", "SEO"],
     color: "bg-pine/35",
     accentColor: "#004A81",
+    chapterNumberColor: "#1A7A8A",
     thumbnail: "/project%20images/hasco1.png",
     thumbnailFit: "contain",
     imagePlaceholders: [
@@ -236,7 +238,7 @@ export const projects: Project[] = [
     challenge:
       "HASCO Group is a Saudi conglomerate operating across six critical sectors — Tourism & Events, Hospitality, Construction, Supply Chain, Marine, and Logistics. With over 20 years of experience and landmark clients including NEOM, Saudi Aramco, and Red Sea Global, the depth of their capabilities was undeniable. Their website was not. The existing digital presence failed to communicate the scale, the credibility, or the integrated strength of a group that operates from Jeddah Port to the Arabian Gulf. A conglomerate of this stature needed a digital platform worthy of its legacy.",
     solution:
-      "BrandQraft approached the HASCO website as an architecture challenge as much as a design challenge — the primary task was making six distinct sectors feel like a single, unified force without losing the specificity that each sector demands.\n\nWe developed a site structure that leads with HASCO's breadth and depth: a strong group-level identity landing into clearly organized sector pages, each communicating its own expertise while remaining visually and tonally consistent with the parent brand. The design language drew directly from HASCO's official color system — Primary Blue (#004A81) and Light Blue (#66AADD) — applied with the clean, minimalist restraint that the brand philosophy demands.\n\nThe build was executed with Montserrat for headings and display text and Helvetica/Arial for body copy, faithful to the brand's typography guidelines. Performance, accessibility, and SEO were built in from the ground up — ensuring the site performs as well in search as it does in a client pitch.",
+      "brandqraft approached the HASCO website as an architecture challenge as much as a design challenge — the primary task was making six distinct sectors feel like a single, unified force without losing the specificity that each sector demands.\n\nWe developed a site structure that leads with HASCO's breadth and depth: a strong group-level identity landing into clearly organized sector pages, each communicating its own expertise while remaining visually and tonally consistent with the parent brand. The design language drew directly from HASCO's official color system — Primary Blue (#004A81) and Light Blue (#66AADD) — applied with the clean, minimalist restraint that the brand philosophy demands.\n\nThe build was executed with Montserrat for headings and display text and Helvetica/Arial for body copy, faithful to the brand's typography guidelines. Performance, accessibility, and SEO were built in from the ground up — ensuring the site performs as well in search as it does in a client pitch.",
     results: [
       "Full multi-sector website launched — presenting HASCO Group's six divisions as a cohesive, authoritative digital presence",
       "Design system built faithfully on HASCO's official brand palette and typography guidelines",
@@ -257,7 +259,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "HASCO Group operates at the backbone of Saudi Arabia's most ambitious projects — and their website needed to say so.",
-          "With over 20 years of experience spanning six critical industries, HASCO has delivered for NEOM, Saudi Aramco, Amaala, and Red Sea Global. Their portfolio of completed projects runs into the hundreds. Their digital presence didn't reflect any of it. BrandQraft built them a platform worthy of the conglomerate behind it.",
+          "With over 20 years of experience spanning six critical industries, HASCO has delivered for NEOM, Saudi Aramco, Amaala, and Red Sea Global. Their portfolio of completed projects runs into the hundreds. Their digital presence didn't reflect any of it. brandqraft built them a platform worthy of the conglomerate behind it.",
         ],
         details: [
           { label: "Type", value: "Saudi Conglomerate" },
@@ -275,7 +277,7 @@ export const projects: Project[] = [
           title: "Understanding the Scale",
           narrative: [
             "Building a website for a conglomerate is a different problem than building one for a single-service business. The challenge isn't showcasing one thing well — it's making six distinct sectors feel like one coherent, formidable group.",
-            "BrandQraft began with a deep audit of HASCO's operational structure, client relationships, and brand identity system. Every design and architecture decision that followed was anchored in a single goal: reflect the true scale of what HASCO has built over two decades.",
+            "brandqraft began with a deep audit of HASCO's operational structure, client relationships, and brand identity system. Every design and architecture decision that followed was anchored in a single goal: reflect the true scale of what HASCO has built over two decades.",
           ],
           highlights: [
             { title: "Tourism & Events", description: "Tourism planning and premium event management across Saudi Arabia's most high-profile destinations" },
@@ -297,6 +299,10 @@ export const projects: Project[] = [
             { title: "Multi-Sector Architecture", description: "Site structure that presents six divisions with clarity — unified at the group level, specific at the sector level" },
             { title: "SEO-First Build", description: "Technical SEO and semantic markup targeting search terms across all six operational sectors" },
             { title: "Performance Optimized", description: "Fast, mobile-first build built for both the boardroom presentation and the Google search result" },
+          ],
+          images: [
+            "/project%20images/hasco3.png",
+            "/project%20images/hasco4.png",
           ],
         },
         {
@@ -337,7 +343,7 @@ export const projects: Project[] = [
     challenge:
       "Mubadara was born with purpose — a clear mission, a passionate founding team, and a compelling vision for what they were building. The brand hadn't caught up. Their identity was generic, forgettable, and disconnected from the depth of what the initiative actually represented. They needed a visual language that could carry their story, signal their ambition, and earn credibility in rooms where first impressions are everything.",
     solution:
-      "We started by going deep on the meaning behind the name and the mission driving the organization. Mubadara — initiative, enterprise, the courage to begin — became the creative north star.\n\nFrom there, BrandQraft developed a complete brand identity: logo system, color palette, typography hierarchy, and a set of core brand pillars that give the visual language its direction. Every element was designed to feel purposeful and to age well — built not just for launch, but for the long term.",
+      "We started by going deep on the meaning behind the name and the mission driving the organization. Mubadara — initiative, enterprise, the courage to begin — became the creative north star.\n\nFrom there, brandqraft developed a complete brand identity: logo system, color palette, typography hierarchy, and a set of core brand pillars that give the visual language its direction. Every element was designed to feel purposeful and to age well — built not just for launch, but for the long term.",
     results: [
       "Complete brand identity delivered — logo system, color palette, typography, and usage guidelines",
       "Brand pillars established, giving the organization a clear visual and verbal foundation to build on",
@@ -356,7 +362,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "Mubadara had the vision. The brand needed to match it.",
-          "When a new venture steps into the world, its brand is its first argument — the visual case it makes before a single word is spoken. Mubadara's founding team understood this. They came to BrandQraft with a mission worth representing and the clarity to know their current identity wasn't doing it justice. We built them the brand they deserved.",
+          "When a new venture steps into the world, its brand is its first argument — the visual case it makes before a single word is spoken. Mubadara's founding team understood this. They came to brandqraft with a mission worth representing and the clarity to know their current identity wasn't doing it justice. We built them the brand they deserved.",
         ],
         details: [
           { label: "Scope", value: "Complete Brand Identity" },
@@ -370,7 +376,7 @@ export const projects: Project[] = [
           label: "The Foundation",
           title: "Strategy & Identity",
           narrative: [
-            "Brand identity without strategy is decoration. BrandQraft's process always begins with understanding — the mission, the market, the audience, and the long-term ambition of the organization.",
+            "Brand identity without strategy is decoration. brandqraft's process always begins with understanding — the mission, the market, the audience, and the long-term ambition of the organization.",
             "For Mubadara, we went deep on what the name means, what the initiative stands for, and how the brand needed to feel to the people it was built for. That thinking became the creative brief — and the creative brief became the brand.",
           ],
           brandColors: [
@@ -435,7 +441,7 @@ export const projects: Project[] = [
     challenge:
       "Oneders Clinics was built on a philosophy that healthcare should feel human — warm, accessible, and genuinely patient-first. But their brand, website, and social media presence told a completely different story: clinical, generic, and indistinguishable from every other healthcare provider in the market. Patients were choosing competitors not because the care was better, but because the presentation was. That needed to change.",
     solution:
-      "BrandQraft reimagined Oneders from the ground up. The brand identity was redesigned to carry warmth and trust in equal measure — a visual language that feels approachable without sacrificing the professionalism healthcare demands.\n\nThe website was rebuilt as an information-rich, easy-to-navigate platform designed to convert site visitors into booked appointments. Every page was structured to answer the questions patients actually ask before choosing a clinic.\n\nOn social media, we built a content strategy rooted in patient education and community trust — consistent, human-centered content that positions Oneders as the clinic that genuinely cares.",
+      "brandqraft reimagined Oneders from the ground up. The brand identity was redesigned to carry warmth and trust in equal measure — a visual language that feels approachable without sacrificing the professionalism healthcare demands.\n\nThe website was rebuilt as an information-rich, easy-to-navigate platform designed to convert site visitors into booked appointments. Every page was structured to answer the questions patients actually ask before choosing a clinic.\n\nOn social media, we built a content strategy rooted in patient education and community trust — consistent, human-centered content that positions Oneders as the clinic that genuinely cares.",
     results: [
       "Complete brand identity redesigned — reflecting the warmth and expertise that defines the Oneders experience",
       "New website launched with patient-first navigation, service pages, and appointment-focused conversion",
@@ -456,7 +462,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "Oneders Clinics was built to do healthcare differently — and their brand needed to show it.",
-          "The name said it all: healthcare that creates wonders, delivered with the kind of warmth that makes patients feel like people, not numbers. But the brand, website, and social presence that represented them in the world said something else entirely. Generic. Cold. Forgettable. In healthcare, trust is the deciding factor — and trust starts with how a brand presents itself. BrandQraft rebuilt everything.",
+          "The name said it all: healthcare that creates wonders, delivered with the kind of warmth that makes patients feel like people, not numbers. But the brand, website, and social presence that represented them in the world said something else entirely. Generic. Cold. Forgettable. In healthcare, trust is the deciding factor — and trust starts with how a brand presents itself. brandqraft rebuilt everything.",
         ],
         details: [
           { label: "Industry", value: "Healthcare / Clinics" },
@@ -471,7 +477,7 @@ export const projects: Project[] = [
           title: "A Brand That Earns Trust",
           narrative: [
             "In healthcare, your brand is a clinical decision. Patients choose providers they trust — and trust begins with how a brand looks and feels before a single word is read.",
-            "BrandQraft developed a complete identity for Oneders that sits at the intersection of warmth and credibility. The visual language communicates care without sacrificing professionalism — a balance that takes real craft to achieve.",
+            "brandqraft developed a complete identity for Oneders that sits at the intersection of warmth and credibility. The visual language communicates care without sacrificing professionalism — a balance that takes real craft to achieve.",
           ],
           brandColors: [
             { name: "Deep Teal", hex: "#0F3460" },
@@ -508,7 +514,7 @@ export const projects: Project[] = [
           label: "Social Media",
           title: "Building a Community of Trust",
           narrative: [
-            "Healthcare brands that win on social media aren't the loudest ones — they're the most helpful ones. BrandQraft built a social strategy for Oneders rooted in patient education and community connection.",
+            "Healthcare brands that win on social media aren't the loudest ones — they're the most helpful ones. brandqraft built a social strategy for Oneders rooted in patient education and community connection.",
             "Consistent content that demystifies treatments, answers common health questions, and introduces the team behind the care. Every post built on the same foundation: Oneders is the clinic that genuinely cares.",
           ],
           stats: [
@@ -555,7 +561,7 @@ export const projects: Project[] = [
     challenge:
       "Elite Style was already delivering exceptional results for their clients — wardrobe transformations, personal styling consultations, and fashion direction that genuinely changed how people presented themselves. But their own brand looked like anything but elite. A mismatched visual identity, a website that undersold everything they offered, and a social presence that didn't scratch the surface of the quality behind the work. In fashion, your brand is your portfolio. Theirs wasn't telling the right story.",
     solution:
-      "BrandQraft rebuilt Elite Style's entire brand presence from the ground up — starting with a premium visual identity that matched the caliber of their work.\n\nThe website was designed as both a portfolio and a conversion platform — showcasing the transformative results Elite Style delivers while making it effortless for potential clients to book consultations. Every design decision was made to feel luxurious yet approachable.\n\nOn social media, we built a strategy around aspiration and education — content that showcases their work, shares styling insight, and builds a loyal audience of potential clients who come to see Elite Style as the authority in personal fashion.",
+      "brandqraft rebuilt Elite Style's entire brand presence from the ground up — starting with a premium visual identity that matched the caliber of their work.\n\nThe website was designed as both a portfolio and a conversion platform — showcasing the transformative results Elite Style delivers while making it effortless for potential clients to book consultations. Every design decision was made to feel luxurious yet approachable.\n\nOn social media, we built a strategy around aspiration and education — content that showcases their work, shares styling insight, and builds a loyal audience of potential clients who come to see Elite Style as the authority in personal fashion.",
     results: [
       "Premium brand identity established — visual language that finally matches the elite quality of the work",
       "New website launched as a portfolio-forward, conversion-optimized platform for new client acquisition",
@@ -576,7 +582,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "Elite Style was transforming clients. Their brand wasn't doing the same for them.",
-          "In fashion and personal styling, your own presentation is your strongest pitch. It's the proof before the pitch — the first thing a potential client sees and uses to decide if you're the one they trust with their image. Elite Style's work was exceptional. Their brand wasn't reflecting it. BrandQraft changed that entirely.",
+          "In fashion and personal styling, your own presentation is your strongest pitch. It's the proof before the pitch — the first thing a potential client sees and uses to decide if you're the one they trust with their image. Elite Style's work was exceptional. Their brand wasn't reflecting it. brandqraft changed that entirely.",
         ],
         details: [
           { label: "Industry", value: "Fashion & Personal Styling" },
@@ -590,7 +596,7 @@ export const projects: Project[] = [
           label: "Brand Identity",
           title: "Building the Premium Identity",
           narrative: [
-            "Premium brands don't happen by accident — they're constructed with deliberate intent. BrandQraft developed Elite Style's complete visual identity with one objective: make the brand feel as exceptional as the service it represents.",
+            "Premium brands don't happen by accident — they're constructed with deliberate intent. brandqraft developed Elite Style's complete visual identity with one objective: make the brand feel as exceptional as the service it represents.",
             "We built a design system that communicates luxury without exclusion — sophisticated, aspirational, and immediately recognizable as a cut above the competition.",
           ],
           brandColors: [
@@ -675,7 +681,7 @@ export const projects: Project[] = [
     challenge:
       "4 Arms Syndicate operates across disciplines — a collective with the range, the craft, and the ambition to build something that doesn't fit into a single category. Their work was powerful. Their brand was non-existent. No coherent identity, a website that failed to contain the scope of what they do, and a social presence that didn't come close to representing the force they actually are. They needed a brand as bold and multi-dimensional as the work they produce.",
     solution:
-      "BrandQraft built 4 Arms Syndicate's brand identity from the ground up — a visual language designed to command attention and communicate strength without explanation. Bold, unapologetic, and built to hold its own in any context.\n\nThe website was designed as an immersive showcase — a platform built to present the full breadth of the collective's work while making their capabilities undeniable to any visitor. Content-heavy, visually driven, and built to impress.\n\nOn social, we built a presence as bold as the brand: a content strategy that documents process, showcases output, and builds a following that actively engages with the collective's work.",
+      "brandqraft built 4 Arms Syndicate's brand identity from the ground up — a visual language designed to command attention and communicate strength without explanation. Bold, unapologetic, and built to hold its own in any context.\n\nThe website was designed as an immersive showcase — a platform built to present the full breadth of the collective's work while making their capabilities undeniable to any visitor. Content-heavy, visually driven, and built to impress.\n\nOn social, we built a presence as bold as the brand: a content strategy that documents process, showcases output, and builds a following that actively engages with the collective's work.",
     results: [
       "Distinctive brand identity built from scratch — bold, recognizable, and impossible to confuse with anyone else",
       "Immersive website launched showcasing the full breadth of the collective's capabilities and portfolio",
@@ -696,7 +702,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "4 Arms Syndicate was already doing remarkable work. The brand needed to announce it.",
-          "A collective this bold, this multi-dimensional, and this deliberately unconventional doesn't fit into a standard brief — and their brand needed to reflect that. No templates. No compromise. BrandQraft built an identity that captures the raw energy and collective strength of four arms moving as one.",
+          "A collective this bold, this multi-dimensional, and this deliberately unconventional doesn't fit into a standard brief — and their brand needed to reflect that. No templates. No compromise. brandqraft built an identity that captures the raw energy and collective strength of four arms moving as one.",
         ],
         details: [
           { label: "Type", value: "Creative Collective" },
@@ -710,7 +716,7 @@ export const projects: Project[] = [
           label: "Brand Identity",
           title: "An Identity That Commands Rooms",
           narrative: [
-            "Some brands are meant to whisper. 4 Arms Syndicate was built to speak loudly, clearly, and without apology. BrandQraft developed an identity that captures the collective's energy — bold geometry, a powerful palette, and a visual language that makes an impact before a single word is read.",
+            "Some brands are meant to whisper. 4 Arms Syndicate was built to speak loudly, clearly, and without apology. brandqraft developed an identity that captures the collective's energy — bold geometry, a powerful palette, and a visual language that makes an impact before a single word is read.",
             "The brand system was built to work across every context the Syndicate operates in — from digital platforms to physical materials, from portfolio decks to social thumbnails.",
           ],
           brandColors: [
@@ -748,7 +754,7 @@ export const projects: Project[] = [
           label: "Social Media",
           title: "Building the Following",
           narrative: [
-            "A collective's social media is its ongoing proof of work. BrandQraft built 4 Arms Syndicate a social presence that documents the process, showcases the output, and builds a community that shows up for what the brand stands for.",
+            "A collective's social media is its ongoing proof of work. brandqraft built 4 Arms Syndicate a social presence that documents the process, showcases the output, and builds a community that shows up for what the brand stands for.",
             "Every post, every story, every reel — consistent in its boldness, its craft, and its refusal to be ordinary.",
           ],
           stats: [
@@ -795,7 +801,7 @@ export const projects: Project[] = [
     challenge:
       "Saratoga was entering a market defined by heritage, distinction, and the kind of quality that doesn't need to announce itself — it's simply felt. To command premium positioning from day one, they needed more than a logo: they needed a brand with genuine depth. One that could hold its own against names with decades of history and communicate, with absolute clarity, that Saratoga belongs at the top of its category.",
     solution:
-      "BrandQraft developed Saratoga's complete brand identity through a process that began with understanding exactly what 'premium' means in their specific market context — and then building a visual language that embodies that standard with precision.\n\nEvery element — the logo, the color palette, the typography system, the brand pillars — was designed with longevity in mind. This is a brand built not just for launch, but for decades of consistent, confident application across every context it will be seen in.",
+      "brandqraft developed Saratoga's complete brand identity through a process that began with understanding exactly what 'premium' means in their specific market context — and then building a visual language that embodies that standard with precision.\n\nEvery element — the logo, the color palette, the typography system, the brand pillars — was designed with longevity in mind. This is a brand built not just for launch, but for decades of consistent, confident application across every context it will be seen in.",
     results: [
       "Complete premium brand identity delivered — logo system, color palette, typography, and comprehensive brand guidelines",
       "Brand pillars established, providing a clear strategic foundation for all future communications",
@@ -814,7 +820,7 @@ export const projects: Project[] = [
       hook: {
         text: [
           "Saratoga was stepping into a world that rewards distinction. Their brand needed to be built for it.",
-          "Premium positioning isn't claimed — it's communicated. Through every visual choice, every typographic decision, every application of color and space, a premium brand either earns the room or loses it. BrandQraft built Saratoga a brand that earns it, every time.",
+          "Premium positioning isn't claimed — it's communicated. Through every visual choice, every typographic decision, every application of color and space, a premium brand either earns the room or loses it. brandqraft built Saratoga a brand that earns it, every time.",
         ],
         details: [
           { label: "Scope", value: "Complete Brand Identity" },
@@ -828,7 +834,7 @@ export const projects: Project[] = [
           label: "The Foundation",
           title: "Crafting the Identity",
           narrative: [
-            "Premium brand identity is as much about what you leave out as what you include. BrandQraft's process for Saratoga began with deep immersion in the category, the competition, and the specific visual language of distinction in their market.",
+            "Premium brand identity is as much about what you leave out as what you include. brandqraft's process for Saratoga began with deep immersion in the category, the competition, and the specific visual language of distinction in their market.",
             "The resulting identity is clean without being cold, refined without being inaccessible — a brand that communicates quality at every scale and in every application.",
           ],
           brandColors: [

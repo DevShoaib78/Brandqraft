@@ -137,15 +137,15 @@ export function Services() {
 
                     {/* Content */}
                     <div className="relative z-10">
-                      {/* Main Title - Now smaller */}
-                      <h3 className={`text-sm md:text-base font-semibold mb-2 leading-tight ${styles.heading}`}>
-                        {service.title}
-                      </h3>
-
-                      {/* Subtitle - Now bigger */}
-                      <span className="inline-block text-white text-xl md:text-2xl lg:text-3xl font-semibold tracking-normal mb-4">
+                      {/* Subtitle - Now smaller */}
+                      <span className="inline-block text-xs md:text-sm font-semibold mb-2 leading-tight text-white">
                         {service.subtitle}
                       </span>
+
+                      {/* Main Title - Now bigger */}
+                      <h3 className={`text-xl md:text-2xl lg:text-3xl font-semibold tracking-normal mb-4 ${styles.heading}`}>
+                        {service.title}
+                      </h3>
 
                       {/* Description */}
                       <p className="text-white/70 text-base md:text-lg leading-relaxed">

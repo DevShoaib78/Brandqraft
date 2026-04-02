@@ -1,4 +1,4 @@
-# CLAUDE.md — BrandQraft Website (v4)
+# CLAUDE.md — brandqraft Website (v4)
 
 > **Complete project context file for AI agents.** Read this before making ANY changes.
 
@@ -6,7 +6,7 @@
 
 ## 1. Project Overview
 
-**BrandQraft** is a branding, digital marketing, and business scaling agency based in **Hyderabad, India**. This repository contains their **official company website** — a premium, single-page marketing site with dynamic project case-study pages.
+**brandqraft** is a branding, digital marketing, and business scaling agency based in **Hyderabad, India**. This repository contains their **official company website** — a premium, single-page marketing site with dynamic project case-study pages.
 
 - **Live URL**: `https://brandqraft.co`(will be deployed, currently live on - https://brandqraft-khaki.vercel.app)
 
@@ -217,25 +217,29 @@ Dynamic pages for each project with:
 
 ## 8. Project Data
 
-5 projects defined in `src/data/projects.ts`:
+Projects defined in `src/data/projects.ts`:
 
 | # | Slug | Title | Category | Has Real Images? |
 |---|---|---|---|---|
-| 1 | `cyfi` | CyFi | Branding, Social Media & Web Development | ✅ Yes (3 screenshots) |
-| 2 | `elevate-fitness` | Elevate Fitness | Branding & Web Development | ❌ Gradient placeholders |
-| 3 | `northwind-capital` | Northwind Capital | Website & Digital Strategy | ❌ Gradient placeholders |
-| 4 | `terra-botanics` | Terra Botanics | Brand Identity & Marketing | ❌ Gradient placeholders |
-| 5 | `cloudscale-solutions` | CloudScale Solutions | Web App & Growth | ❌ Gradient placeholders |
+| 1 | `cyfi` | Cyfi | Branding, Social Media & Web Development | ✅ Yes (3 screenshots + logo) |
+| 2 | `hasco` | HASCO Group | Web Development | ✅ Yes (2 website screenshots in chapter 02) |
+| 3 | `mubadara` | Mubadara | Brand Identity | ❌ Gradient placeholders |
+| 4 | `elevate-fitness` | Elevate Fitness | Branding & Web Development | ❌ Gradient placeholders |
+| 5 | `northwind-capital` | Northwind Capital | Website & Digital Strategy | ❌ Gradient placeholders |
+| 6 | `terra-botanics` | Terra Botanics | Brand Identity & Marketing | ❌ Gradient placeholders |
+| 7 | `cloudscale-solutions` | CloudScale Solutions | Web App & Growth | ❌ Gradient placeholders |
 
-Each project has: `slug`, `title`, `category`, `description`, `tags`, `color`, `accentColor`, `thumbnail?`, `projectImages?`, `imagePlaceholders`, `challenge`, `solution`, `results[]`, `servicesProvided[]`.
+Each project has: `slug`, `title`, `category`, `description`, `tags`, `color`, `accentColor`, `chapterNumberColor?`, `thumbnail?`, `thumbnailFit?`, `projectImages?`, `imagePlaceholders`, `challenge`, `solution`, `results[]`, `servicesProvided[]`, `story?`.
 
-> **Note**: Only **CyFi** has real project images. The other 4 projects use animated gradient placeholders (color cycling on the project card).
+> **Note**: `chapterNumberColor` is an optional override for the 01/02/03 step number color in the case study chapters. Used in HASCO to avoid their dark brand blue blending with the background. Defaults to `accentColor` when not set.
+
+> **Chapter images**: Images can be placed inside specific story chapters via `chapter.images[]`. They render **before** the highlights cards within that chapter. Use this for project screenshots that belong to a specific phase of work.
 
 ---
 
 ## 9. Business Information (from structured data / footer)
 
-- **Company**: BrandQraft
+- **Company**: brandqraft
 - **Email**: info@brandqraft.co
 - **Phone**: +91 95360 84444
 - **Address**: Office No:228, 6-3-252/2, Opp Taj Deccan Workafella, Banjara Hills, Hyderabad, Telangana, India - 500082
@@ -310,8 +314,12 @@ npm run lint         # ESLint
 4. **OrigamiDecoration SSR**: Uses `typeof window !== 'undefined'` check for mobile detection — will default to desktop position during SSR
 5. **Splash screen behavior**: Currently uses `sessionStorage` + navigation type detection. On first visit or reload: shows splash. On client-side navigation (back button): may not show splash
 6. **WhatsApp form**: Contact form doesn't actually submit to a backend — it opens WhatsApp with a pre-filled message
-7. **Project images**: Only CyFi project has real screenshots. Other projects need real images added (currently showing gradient placeholders)
+7. **Project images**: Cyfi and HASCO have real images. Remaining projects (Mubadara, Elevate Fitness, Northwind Capital, Terra Botanics, CloudScale Solutions) still use gradient placeholders.
 8. **Social links**: LinkedIn, Twitter, Instagram links in the footer are placeholder `#` — need real URLs
+9. **Chapter images render order**: `images[]` in a chapter renders **before** `highlights` cards — this is intentional (screenshots first, then detail cards).
+10. **ImagesSection**: Uses `width/height` + `h-auto object-contain` (not `fill` + `object-cover`) so images display at their natural aspect ratio without cropping. Do NOT switch back to `fill`/`object-cover`.
+11. **Brand name casing**: The brand is always written as **brandqraft** (all lowercase) everywhere — in UI text, data files, and documentation. Never use "BrandQraft" or "Brandqraft". The client logo uses all lowercase letters.
+12. **Project name casing**: The cybersecurity client is **Cyfi** (only C capital). Never use "CyFi".
 
 ---
 
@@ -335,15 +343,24 @@ Based on the git history and `nextstep.md` file, the most recent development wor
 - ✅ SEO: Full metadata, JSON-LD structured data, dynamic sitemap, OG image generation
 - ✅ Paper-fold corner redesign for better visibility
 - ✅ Project detail pages with dynamic routing and breadcrumb schema
-- ✅ CyFi project case study with real images
+- ✅ Cyfi project case study with real images
 - ✅ Origami icon decorations across all sections
 - ✅ Responsive design (mobile, tablet, desktop)
 - ✅ 404 and error pages with brand-consistent styling
 - ✅ Loading skeleton for project pages
+- ✅ HASCO project case study with real website screenshots (hasco3, hasco4) in chapter 02
+- ✅ Fixed corrupted `src/app/icon.png` favicon (replaced with valid `public/favicon.png`)
+- ✅ Services section: heading hierarchy swapped (service name now big + accent colored, subtitle now small + white), subtitle font reduced to `text-xs/text-sm`
+- ✅ Brand name standardized to **brandqraft** (all lowercase) across all files
+- ✅ Client name standardized to **Cyfi** (only C capital) across all files
+- ✅ "Why brandqraft?" label: removed `uppercase` CSS class so it renders as written, font size `text-base`
+- ✅ HASCO chapter numbers (01/02/03): use `chapterNumberColor: "#1A7A8A"` instead of the dark brand blue
+- ✅ Cyfi logo section: removed frame/border/clip-path/gradient overlays — image renders cleanly
+- ✅ Brand colors grid in project pages: switched from `flex flex-wrap` to `grid grid-cols-2` for consistent mobile layout
+- ✅ Chapter images now render **before** highlights cards (not after)
+- ✅ ImagesSection: full images visible without cropping (`object-contain`, `h-auto`, natural aspect ratio)
 
-### Pending / Next Steps (from `nextstep.md`)
-
-The `nextstep.md` file contains a detailed list of **UI refinement requests** that have NOT been implemented yet:
+### Pending / Next Steps
 
 1. **Splash Screen Behavior** — Ensure it appears on EVERY page load (including refresh, revisit, direct navigation). Currently may not show on all scenarios.
 
@@ -365,7 +382,7 @@ The `nextstep.md` file contains a detailed list of **UI refinement requests** th
 
 7. **Social Media Links** — LinkedIn, Twitter, Instagram links are still placeholder `#`
 
-8. **Project Images** — 4 out of 5 projects (Elevate Fitness, Northwind Capital, Terra Botanics, CloudScale Solutions) still use gradient placeholders instead of real project images.
+8. **Project Images** — Mubadara, Elevate Fitness, Northwind Capital, Terra Botanics, CloudScale Solutions still use gradient placeholders instead of real project images.
 
 ---
 

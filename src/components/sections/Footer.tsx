@@ -114,7 +114,7 @@ export function Footer() {
               <div className="max-w-md">
                 <Image
                   src="/logo white.png"
-                  alt="BrandQraft"
+                  alt="brandqraft"
                   width={180}
                   height={50}
                   className="h-10 w-auto mb-6"

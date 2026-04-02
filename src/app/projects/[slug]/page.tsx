@@ -18,18 +18,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Project Not Found | BrandQraft",
+      title: "Project Not Found | brandqraft",
     };
   }
 
   return {
-    title: `${project.title} – ${project.category} | BrandQraft`,
+    title: `${project.title} – ${project.category} | brandqraft`,
     description: project.description,
     openGraph: {
-      title: `${project.title} – ${project.category} | BrandQraft`,
+      title: `${project.title} – ${project.category} | brandqraft`,
       description: project.description,
       url: `/projects/${project.slug}`,
-      siteName: "BrandQraft",
+      siteName: "brandqraft",
       type: "article",
       images: [
         {
@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           width: 512,
           height: 512,
           type: "image/png",
-          alt: `${project.title} – BrandQraft Case Study`,
+          alt: `${project.title} – brandqraft Case Study`,
         },
       ],
     },
     twitter: {
       card: "summary",
-      title: `${project.title} – ${project.category} | BrandQraft`,
+      title: `${project.title} – ${project.category} | brandqraft`,
       description: project.description,
       images: ["/favicon.png"],
     },

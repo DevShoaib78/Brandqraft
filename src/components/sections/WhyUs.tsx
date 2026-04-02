@@ -74,7 +74,7 @@ export function WhyUs() {
             <div className="lg:col-span-3">
               {/* Label */}
               <FadeInView>
-                <span className="inline-block text-sea-green text-base md:text-lg font-semibold tracking-widest mb-4 uppercase">
+                <span className="inline-block text-sea-green text-base font-semibold tracking-widest mb-4">
                   Why brandqraft?
                 </span>
               </FadeInView>

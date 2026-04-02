@@ -19,13 +19,13 @@ export default function Home() {
       {
         "@type": "Organization",
         "@id": `${siteUrl}/#organization`,
-        "name": "BrandQraft",
+        "name": "brandqraft",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",
           "url": `${siteUrl}/logo black.png`,
         },
-        "description": "BrandQraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
+        "description": "brandqraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
         "email": "info@brandqraft.co",
         "telephone": "+919536084444",
         "address": {
@@ -47,7 +47,7 @@ export default function Home() {
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "BrandQraft Services",
+          "name": "brandqraft Services",
           "itemListElement": [
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
@@ -59,7 +59,7 @@ export default function Home() {
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
-        "name": "BrandQraft",
+        "name": "brandqraft",
         "url": siteUrl,
         "publisher": { "@id": `${siteUrl}/#organization` },
         "potentialAction": {
@@ -75,8 +75,8 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         "url": siteUrl,
-        "name": "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
-        "description": "BrandQraft transforms innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
+        "name": "brandqraft | Branding, Digital Marketing & Business Scaling Agency",
+        "description": "brandqraft transforms innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
         "isPartOf": { "@id": `${siteUrl}/#website` },
         "about": { "@id": `${siteUrl}/#organization` },
         "inLanguage": "en-US",

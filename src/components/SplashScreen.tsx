@@ -69,7 +69,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
           >
             <Image
               src="/logo white.png"
-              alt="BrandQraft"
+              alt="brandqraft"
               width={220}
               height={60}
               priority

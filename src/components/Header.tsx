@@ -72,7 +72,7 @@ export function Header() {
                 {/* Black logo (shown initially) */}
                 <Image
                   src="/logo black.png"
-                  alt="BrandQraft"
+                  alt="brandqraft"
                   fill
                   className={`object-contain object-left transition-opacity duration-500 ${
                     isScrolled ? "opacity-0" : "opacity-100"
@@ -82,7 +82,7 @@ export function Header() {
                 {/* White logo (shown on scroll) */}
                 <Image
                   src="/logo white.png"
-                  alt="BrandQraft"
+                  alt="brandqraft"
                   fill
                   className={`object-contain object-left transition-opacity duration-500 ${
                     isScrolled ? "opacity-100" : "opacity-0"
@@ -167,7 +167,7 @@ export function Header() {
                 <a href="#" className="relative h-12 w-36">
                   <Image
                     src="/logo white.png"
-                    alt="BrandQraft"
+                    alt="brandqraft"
                     fill
                     className="object-contain object-left"
                   />

@@ -33,18 +33,7 @@ function LogoSection({ logo, project }: { logo: ChapterLogo; project: Project })
       className="mb-20"
     >
       {/* Logo display — large, immersive */}
-      <div className="relative aspect-[16/6] mb-12 overflow-hidden"
-        style={{
-          clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)",
-          background: "rgba(255,255,255,0.025)",
-          border: "1px solid rgba(255,255,255,0.07)",
-        }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{ background: `radial-gradient(ellipse at center, ${project.accentColor}18 0%, transparent 70%)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nile-blue/50" />
+      <div className="relative aspect-[16/6] mb-12 overflow-hidden">
         <Image
           src={logo.src}
           alt={`${project.title} Logo`}
@@ -53,7 +42,6 @@ function LogoSection({ logo, project }: { logo: ChapterLogo; project: Project })
           priority
           sizes="100vw"
         />
-        <PaperFoldCorner size="xl" variant="light" />
       </div>
 
       {/* Logo narrative */}
@@ -80,7 +68,7 @@ function BrandColorsSection({ colors }: { colors: BrandColor[] }) {
       <p className="text-white/50 text-sm font-semibold tracking-widest uppercase mb-8">
         Brand Colors
       </p>
-      <div className="flex flex-wrap gap-6">
+      <div className="grid grid-cols-2 gap-6">
         {colors.map((color, i) => (
           <motion.div
             key={color.name}
@@ -233,12 +221,13 @@ function ImagesSection({ images, project }: { images: string[]; project: Project
               className="overflow-hidden"
               style={{ clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%)" }}
             >
-              <div className={`relative ${isSingle ? "aspect-[16/7]" : "aspect-video"}`}>
+              <div className="relative w-full">
                 <Image
                   src={src}
                   alt={`${project.title} — screenshot ${i + 1}`}
-                  fill
-                  className="object-cover"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
@@ -336,7 +325,7 @@ function ChapterSection({
         >
           <span
             className="text-base md:text-lg font-bold tracking-widest tabular-nums"
-            style={{ color: project.accentColor }}
+            style={{ color: project.chapterNumberColor ?? project.accentColor }}
           >
             {chapter.number}
           </span>
@@ -374,10 +363,10 @@ function ChapterSection({
         {chapter.logo && <LogoSection logo={chapter.logo} project={project} />}
         {chapter.brandColors && <BrandColorsSection colors={chapter.brandColors} />}
         {chapter.brandPillars && <BrandPillarsSection pillars={chapter.brandPillars} project={project} />}
-        {chapter.highlights && <HighlightsSection highlights={chapter.highlights} project={project} />}
         {chapter.images && chapter.images.length > 0 && (
           <ImagesSection images={chapter.images} project={project} />
         )}
+        {chapter.highlights && <HighlightsSection highlights={chapter.highlights} project={project} />}
         {chapter.stats && <StatsSection stats={chapter.stats} project={project} />}
         {isImpactChapter && <ResultsSection results={project.results} project={project} />}
       </div>
@@ -403,7 +392,7 @@ function CTASection({ project }: { project: Project }) {
             Want results like these?
           </h2>
           <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Let&apos;s discuss how BrandQraft can transform your business.
+            Let&apos;s discuss how brandqraft can transform your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="relative inline-flex">

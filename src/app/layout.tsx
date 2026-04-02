@@ -11,9 +11,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co"),
-  title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
+  title: "brandqraft | Branding, Digital Marketing & Business Scaling Agency",
   description:
-    "BrandQraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
+    "brandqraft transforms innovative ideas into thriving brands. We specialize in branding, digital marketing, website development, and business scaling solutions for ambitious entrepreneurs.",
   alternates: {
     canonical: process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co",
   },
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "growth agency",
     "Hyderabad",
   ],
-  authors: [{ name: "BrandQraft" }],
-  creator: "BrandQraft",
-  publisher: "BrandQraft",
+  authors: [{ name: "brandqraft" }],
+  creator: "brandqraft",
+  publisher: "brandqraft",
   robots: {
     index: true,
     follow: true,
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://brandqraft.co",
-    siteName: "BrandQraft",
-    title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
+    siteName: "brandqraft",
+    title: "brandqraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
     images: [
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: "BrandQraft - Your Strategic Growth Partner",
+        alt: "brandqraft - Your Strategic Growth Partner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BrandQraft | Branding, Digital Marketing & Business Scaling Agency",
+    title: "brandqraft | Branding, Digital Marketing & Business Scaling Agency",
     description:
       "Transforming innovative ideas into thriving brands. End-to-end business lifecycle solutions from ideation to sustainable growth.",
     images: ["/opengraph-image"],
